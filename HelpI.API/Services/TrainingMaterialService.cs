@@ -13,13 +13,15 @@ namespace HelpI.API.Services
     {
         private readonly ITrainingMaterialRepository _trainingMaterialRepository;
         private readonly IExpertRepository _expertRepository;
+        private readonly IPlayerTrainingMaterialRepository _playerTrainingMaterialRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TrainingMaterialService(ITrainingMaterialRepository trainingMaterialRepository, IUnitOfWork unitOfWork, IExpertRepository expertRepository)
+        public TrainingMaterialService(ITrainingMaterialRepository trainingMaterialRepository, IUnitOfWork unitOfWork, IExpertRepository expertRepository, IPlayerTrainingMaterialRepository playerTrainingMaterialRepository)
         {
             _trainingMaterialRepository = trainingMaterialRepository;
             _unitOfWork = unitOfWork;
             _expertRepository = expertRepository;
+            _playerTrainingMaterialRepository = playerTrainingMaterialRepository;
         }
 
         public Task<TrainingMaterialResponse> GetByIdAsync(int id)
@@ -35,6 +37,13 @@ namespace HelpI.API.Services
         public async Task<IEnumerable<TrainingMaterial>> ListByExpertIdAsync(int expertId)
         {
             return await _trainingMaterialRepository.ListByExpertIdAsync(expertId);
+        }
+
+        public async Task<IEnumerable<TrainingMaterial>> ListByPlayerIdAsync(int playerId)
+        {
+            var playerTrainingMaterials = await _playerTrainingMaterialRepository.ListByPlayerIdAsync(playerId);
+            var trainingMaterials = playerTrainingMaterials.Select(pt => pt.TrainingMaterial).ToList();
+            return trainingMaterials;
         }
 
         public async Task<TrainingMaterialResponse> PublishTrainingMaterialAsync(int expertId, TrainingMaterial trainingMaterial)

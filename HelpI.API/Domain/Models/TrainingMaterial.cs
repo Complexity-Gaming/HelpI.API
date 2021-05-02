@@ -11,5 +11,6 @@ namespace HelpI.API.Domain.Models
         public decimal Price { get; set; }
         public int ExpertId { get; set; }
         public Expert CreatedBy { get; set; }
+        public List<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
     }
 }
