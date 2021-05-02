@@ -12,6 +12,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
     {
         public DbSet<Player> Players { get; set; }
         public DbSet<Expert> Experts { get; set; }
+        public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -41,6 +42,21 @@ namespace HelpI.API.Domain.Persistence.Contexts
             builder.Entity<Expert>().Property(p => p.Email).IsRequired();
             builder.Entity<Expert>().Property(p => p.Password).IsRequired().HasMaxLength(15);
             //builder.Entity<Expert>().Property(p => p.BirthDate).IsRequired();
+
+            //Relationships
+            builder.Entity<Expert>()
+                .HasMany(p => p.TrainingMaterials)
+                .WithOne(p => p.CreatedBy)
+                .HasForeignKey(p => p.ExpertId);
+
+            // Training Material Entity
+            builder.Entity<TrainingMaterial>().ToTable("TrainingMaterials");
+            
+            // Constraints
+            builder.Entity<TrainingMaterial>().HasKey(p => p.Id);
+            builder.Entity<TrainingMaterial>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<TrainingMaterial>().Property(p => p.Price).IsRequired();
+
 
             builder.ApplySnakeCaseNamingConvention();
         }
