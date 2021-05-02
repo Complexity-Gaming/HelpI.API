@@ -11,6 +11,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
     public class AppDbContext : DbContext
     {
         public DbSet<Player> Players { get; set; }
+        public DbSet<Expert> Experts { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -27,7 +28,19 @@ namespace HelpI.API.Domain.Persistence.Contexts
             builder.Entity<Player>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Player>().Property(p => p.Name).IsRequired().HasMaxLength(30);
             builder.Entity<Player>().Property(p => p.Email).IsRequired();
-            builder.Entity<Player>().Property(p => p.BirthDate).IsRequired();
+            builder.Entity<Player>().Property(p => p.Password).IsRequired().HasMaxLength(15);
+            //builder.Entity<Player>().Property(p => p.BirthDate).IsRequired();
+
+            // Expert Entity
+            builder.Entity<Expert>().ToTable("Experts");
+
+            // Constraints
+            builder.Entity<Expert>().HasKey(p => p.Id);
+            builder.Entity<Expert>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Expert>().Property(p => p.Name).IsRequired().HasMaxLength(30);
+            builder.Entity<Expert>().Property(p => p.Email).IsRequired();
+            builder.Entity<Expert>().Property(p => p.Password).IsRequired().HasMaxLength(15);
+            //builder.Entity<Expert>().Property(p => p.BirthDate).IsRequired();
 
             builder.ApplySnakeCaseNamingConvention();
         }

@@ -12,19 +12,22 @@ using System.Threading.Tasks;
 namespace HelpI.API.Controllers
 {
     [Route("/api/[controller]")]
-    public class PlayerController : ControllerBase
+    [Produces("application/json")]
+    [ApiController]
+    public class PlayersController : ControllerBase
     {
 
         private readonly IPlayerService _playerService;
         private readonly IMapper _mapper;
 
-        public PlayerController(IPlayerService playerService, IMapper mapper)
+        public PlayersController(IPlayerService playerService, IMapper mapper)
         {
             _playerService = playerService;
             _mapper = mapper;
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<PlayerResource>), 200)]
         public async Task<IEnumerable<PlayerResource>> GetAllAsync()
         {
             var players = await _playerService.ListAsync();
@@ -42,7 +45,7 @@ namespace HelpI.API.Controllers
             var result = await _playerService.SaveAsync(player);
 
             if (!result.Success)
-                return BadRequest(ModelState.GetErrorMessages());
+                return BadRequest(result.Message);
 
             var playerResource = _mapper.Map<Player, PlayerResource>(result.Resource);
 
