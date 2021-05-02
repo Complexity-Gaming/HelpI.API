@@ -44,10 +44,12 @@ namespace HelpI.API
             // Dependency Injection Configuration
             services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<IExpertRepository, ExpertRepository>();
+            services.AddScoped<ITrainingMaterialRepository, TrainingMaterialRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IExpertService, ExpertService>();
+            services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
 
             // Endpoints Case Conventions Configuration
 

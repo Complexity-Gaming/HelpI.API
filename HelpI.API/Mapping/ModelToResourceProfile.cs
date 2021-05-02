@@ -15,6 +15,7 @@ namespace HelpI.API.Mapping
             CreateMap<Person, PersonResource>();
             CreateMap<Player, PlayerResource>();
             CreateMap<Expert, ExpertResource>();
+            CreateMap<TrainingMaterial, TrainingMaterialResource>();
         }
     }
 }

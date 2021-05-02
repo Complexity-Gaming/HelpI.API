@@ -7,6 +7,6 @@ namespace HelpI.API.Domain.Models
 {
     public class Expert : Person
     {
-   
+        public IList<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
     }
 }
