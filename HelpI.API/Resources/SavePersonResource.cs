@@ -11,5 +11,10 @@ namespace HelpI.API.Resources
         [Required]
         [MaxLength(30)]
         public string Name { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        [MaxLength(15)]
+        public string Password { get; set; }
     }
 }

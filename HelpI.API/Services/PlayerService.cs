@@ -66,7 +66,7 @@ namespace HelpI.API.Services
             }
             catch(Exception ex)
             {
-                return new PlayerResponse($"An error ocurred while saving the tag: {ex.Message}");
+                return new PlayerResponse($"An error ocurred while saving player: {ex.Message}");
             }
         }
 
