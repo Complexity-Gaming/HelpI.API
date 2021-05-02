@@ -7,9 +7,6 @@ namespace HelpI.API.Domain.Models
 {
     public class Player : Person
     {
-        public Player()
-        {
-        }
-        
+        public List<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
     }
 }

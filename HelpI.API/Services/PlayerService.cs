@@ -12,12 +12,14 @@ namespace HelpI.API.Services
     public class PlayerService : IPlayerService
     {
         private readonly IPlayerRepository _playerRepository;
+        private readonly IPlayerTrainingMaterialRepository _playerTrainingMaterialRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public PlayerService(IPlayerRepository playerRepository, IUnitOfWork unitOfWork)
+        public PlayerService(IPlayerRepository playerRepository, IUnitOfWork unitOfWork, IPlayerTrainingMaterialRepository playerTrainingMaterialRepository)
         {
             _playerRepository = playerRepository;
             _unitOfWork = unitOfWork;
+            _playerTrainingMaterialRepository = playerTrainingMaterialRepository;
         }
 
         public async Task<PlayerResponse> DeleteAsync(int id)
@@ -53,6 +55,13 @@ namespace HelpI.API.Services
         public async Task<IEnumerable<Player>> ListAsync()
         {
             return await _playerRepository.ListAsync(); 
+        }
+
+        public async Task<IEnumerable<Player>> ListByTrainingMaterialIdAsync(int trainingMaterialId)
+        {
+            var playerTrainingMaterials = await _playerTrainingMaterialRepository.ListByTrainingMaterialIdAsync(trainingMaterialId);
+            var players = playerTrainingMaterials.Select(pt => pt.Player).ToList();
+            return players;
         }
 
         public async Task<PlayerResponse> SaveAsync(Player player)
