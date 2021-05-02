@@ -1,7 +1,13 @@
+using HelpI.API.Domain.Persistence.Contexts;
+using HelpI.API.Domain.Persistence.Repositories;
+using HelpI.API.Domain.Services;
+using HelpI.API.Persistence.Repositories;
+using HelpI.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,9 +34,35 @@ namespace HelpI.API
         {
 
             services.AddControllers();
+
+            // DbContext Configuration
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            // Dependency Injection Configuration
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<IExpertRepository, ExpertRepository>();
+            services.AddScoped<ITrainingMaterialRepository, TrainingMaterialRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IPlayerService, PlayerService>();
+            services.AddScoped<IExpertService, ExpertService>();
+            services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
+
+            // Endpoints Case Conventions Configuration
+
+            services.AddRouting(options => options.LowercaseUrls = true);
+
+            // AutoMapper initialization
+            services.AddAutoMapper(typeof(Startup));
+
+            // Documentation Setup
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HelpI.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Help-I.API", Version = "v1" });
+                c.EnableAnnotations();
             });
         }
 
