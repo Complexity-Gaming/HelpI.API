@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpI.API", "HelpI.API\HelpI.API.csproj", "{C5D49FF0-C470-401B-9B71-43F85BBE4885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpI.API", "HelpI.API\HelpI.API.csproj", "{C5D49FF0-C470-401B-9B71-43F85BBE4885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpI.API.Test", "HelpI.API.Test\HelpI.API.Test.csproj", "{2F0127DB-2958-4CF0-8E35-6231650910BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C5D49FF0-C470-401B-9B71-43F85BBE4885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D49FF0-C470-401B-9B71-43F85BBE4885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D49FF0-C470-401B-9B71-43F85BBE4885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0127DB-2958-4CF0-8E35-6231650910BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0127DB-2958-4CF0-8E35-6231650910BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0127DB-2958-4CF0-8E35-6231650910BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0127DB-2958-4CF0-8E35-6231650910BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
