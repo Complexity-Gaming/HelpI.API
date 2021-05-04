@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Test
 {
-    public class PlayerServiceTest
+    public class PlayerServiceTest : BaseServiceTest
     {
         [SetUp]
         public void Setup()
@@ -88,22 +88,7 @@ namespace HelpI.API.Test
 
             message.Should().Be("Player not found");
         }
-        
-        private Mock<IPlayerRepository> GetDefaultIPlayerRepositoryInstance()
-        {
-            return new Mock<IPlayerRepository>();
-        }
-
-        private Mock<IUnitOfWork> GetDefaultIUnitOfWorkInstance()
-        {
-            return new Mock<IUnitOfWork>();
-        }
-
-        private Mock<IPlayerTrainingMaterialRepository> GetDefaultIPlayerTrainingMaterialRepositoryInstance()
-        {
-            return new Mock<IPlayerTrainingMaterialRepository>();
-        }
-
+       
         private Mock<PlayerResponse> GetDefaultPlayerResponseInstance()
         {
             return new Mock<PlayerResponse>();

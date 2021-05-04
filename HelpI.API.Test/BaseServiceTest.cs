@@ -6,7 +6,7 @@ namespace HelpI.API.Test
 {
     public abstract class BaseServiceTest
     {
-        protected Mock<IUnitOfWork> GetDefaultIUnitOfWOrkInstance()
+        protected Mock<IUnitOfWork> GetDefaultIUnitOfWorkInstance()
         {
             return new Mock<IUnitOfWork>();
         }
@@ -20,9 +20,13 @@ namespace HelpI.API.Test
             return new Mock<ITrainingMaterialRepository>();
         }
 
-        protected Mock<IPlayerTrainingMaterialRepository> GetDefaultIPlayerTrainingMaterialRepositoryRepositoryInstance()
+        protected Mock<IPlayerTrainingMaterialRepository> GetDefaultIPlayerTrainingMaterialRepositoryInstance()
         {
             return new Mock<IPlayerTrainingMaterialRepository>();
+        }
+        protected Mock<IPlayerRepository> GetDefaultIPlayerRepositoryInstance()
+        {
+            return new Mock<IPlayerRepository>();
         }
     }
 }
