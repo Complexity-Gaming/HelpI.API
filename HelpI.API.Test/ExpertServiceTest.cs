@@ -22,11 +22,11 @@ namespace HelpI.API.Test
 
         }
         [Test]
-        public async Task GetAllAsync_WhenNoExperts_ReturnEmptyCollection()
+        public async Task GetAllAsyncWhenNoExpertsReturnEmptyCollection()
         {
             // Arrange
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
-            var mockUnitOfWork = GetDefaultIUnitOfWOrkInstance();
+            var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
 
             mockExpertRepository.Setup(r => r.ListAsync()).ReturnsAsync(new List<Expert>());
 
@@ -42,11 +42,11 @@ namespace HelpI.API.Test
         }
 
         [Test]
-        public async Task GetByIdAsync_WhenInvalidId_ReturnsExpertNotFoundResponse()
+        public async Task GetByIdAsyncWhenInvalidIdReturnsExpertNotFoundResponse()
         {
             // Arrange
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
-            var mockUnitOfWork = GetDefaultIUnitOfWOrkInstance();
+            var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var expertId = 1;
             mockExpertRepository.Setup(r => r.FindById(expertId)).Returns(Task.FromResult<Expert>(null));
             var service = new ExpertService(mockUnitOfWork.Object, mockExpertRepository.Object);

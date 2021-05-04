@@ -20,13 +20,13 @@ namespace HelpI.API.Test
 
         }
         [Test]
-        public async Task GetAllAsync_WhenNoTrainingMaterials_ReturnEmptyCollection()
+        public async Task GetAllAsyncWhenNoTrainingMaterialsReturnEmptyCollection()
         {
             // Arrange
             var mockTrainingMaterialRepository = GetDefaultITrainingMaterialRepositoryInstance();
-            var mockPlayerTrainingMaterialRepository = GetDefaultIPlayerTrainingMaterialRepositoryRepositoryInstance();
+            var mockPlayerTrainingMaterialRepository = GetDefaultIPlayerTrainingMaterialRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
-            var mockUnitOfWork = GetDefaultIUnitOfWOrkInstance();
+            var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
 
             mockTrainingMaterialRepository.Setup(r => r.ListAsync()).ReturnsAsync(new List<TrainingMaterial>());
 
