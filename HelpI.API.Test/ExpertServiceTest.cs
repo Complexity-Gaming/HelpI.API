@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Test
 {
-    public class ExpertServiceTest : BaseServiceTest<IExpertService>
+    public class ExpertServiceTest : BaseServiceTest
     {
         [SetUp]
         public void Setup()
@@ -60,9 +60,5 @@ namespace HelpI.API.Test
         }
 
 
-        private Mock<IExpertRepository> GetDefaultIExpertRepositoryInstance()
-        {
-            return new Mock<IExpertRepository>();
-        }
     }
 }
