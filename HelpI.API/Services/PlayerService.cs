@@ -22,6 +22,11 @@ namespace HelpI.API.Services
             _playerTrainingMaterialRepository = playerTrainingMaterialRepository;
         }
 
+        public PlayerService()
+        {
+
+        }
+
         public async Task<PlayerResponse> DeleteAsync(int id)
         {
             var existingPlayer = await _playerRepository.FindById(id);
