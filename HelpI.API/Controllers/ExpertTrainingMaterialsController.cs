@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Controllers
 {
-    [Route("/api/experts/{expertId}/trainingmaterials")]
+    [Route("/api/experts/{expertId}/trainings")]
     public class ExpertTrainingMaterialsController : ControllerBase
     {
         private readonly ITrainingMaterialService _trainingMaterialService;
