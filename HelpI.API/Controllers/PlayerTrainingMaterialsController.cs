@@ -19,7 +19,8 @@ namespace HelpI.API.Controllers
         private readonly ITrainingMaterialService _trainingMaterialService;
         private readonly IMapper _mapper;
 
-        public PlayerTrainingMaterialsController(ITrainingMaterialService trainingMaterialService, IMapper mapper, IPlayerTrainingMaterialService playerTrainingMaterialService)
+        public PlayerTrainingMaterialsController(
+            ITrainingMaterialService trainingMaterialService, IMapper mapper, IPlayerTrainingMaterialService playerTrainingMaterialService)
         {
             _trainingMaterialService = trainingMaterialService;
             _mapper = mapper;
