@@ -24,4 +24,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\Applying\Rest\" />
+    <Folder Include="Interfaces\Coaching\Rest\" />
+    <Folder Include="Interfaces\Games\Rest\" />
+    <Folder Include="Interfaces\Payment\Rest\" />
+    <Folder Include="Interfaces\Scheduling\Rest\" />
+  </ItemGroup>
+
 </Project>

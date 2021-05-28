@@ -1,13 +1,12 @@
 using NUnit.Framework;
 using Moq;
 using FluentAssertions;
-using HelpI.API.Domain.Services;
-using HelpI.API.Persistence.Repositories;
-using HelpI.API.Domain.Persistence.Repositories;
 using HelpI.API.Domain.Services.Communications;
 using HelpI.API.Domain.Models;
-using HelpI.API.Services;
+using HelpI.API.Application;
 using System.Threading.Tasks;
+using HelpI.API.Application.Services.Security;
+using HelpI.API.Domain.Models.Security;
 
 namespace HelpI.API.Test
 {

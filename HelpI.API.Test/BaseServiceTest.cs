@@ -1,4 +1,6 @@
 using HelpI.API.Domain.Persistence.Repositories;
+using HelpI.API.Domain.Persistence.Repositories.Security;
+using HelpI.API.Domain.Persistence.Repositories.Training;
 using Moq;
 using NUnit.Framework;
 

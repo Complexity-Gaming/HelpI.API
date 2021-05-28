@@ -1,8 +1,6 @@
 using HelpI.API.Domain.Persistence.Contexts;
 using HelpI.API.Domain.Persistence.Repositories;
 using HelpI.API.Domain.Services;
-using HelpI.API.Persistence.Repositories;
-using HelpI.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,6 +15,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelpI.API.Application.Services.Training;
+using HelpI.API.Domain.Persistence.Repositories.Security;
+using HelpI.API.Infrastructure.Persistence.Repositories.Security;
+using HelpI.API.Domain.Persistence.Repositories.Training;
+using HelpI.API.Infrastructure.Persistence.Repositories.Training;
+using HelpI.API.Infrastructure.Persistence.Repositories;
+using HelpI.API.Application.Services.Security;
 
 namespace HelpI.API
 {
