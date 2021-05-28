@@ -1,9 +1,5 @@
 ﻿using FluentAssertions;
-using HelpI.API.Domain.Models;
-using HelpI.API.Domain.Persistence.Repositories;
-using HelpI.API.Domain.Services;
 using HelpI.API.Domain.Services.Communications;
-using HelpI.API.Services;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -11,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HelpI.API.Application.Services.Security;
+using HelpI.API.Domain.Models.Security;
 
 namespace HelpI.API.Test
 {

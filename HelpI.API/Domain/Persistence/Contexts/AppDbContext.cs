@@ -1,5 +1,6 @@
-﻿using HelpI.API.Domain.Models;
-using HelpI.API.Extensions;
+﻿using HelpI.API.Application.Extensions;
+using HelpI.API.Domain.Models.Security;
+using HelpI.API.Domain.Models.Training;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
