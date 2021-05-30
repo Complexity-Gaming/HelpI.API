@@ -94,6 +94,11 @@ namespace HelpI.API.Application.Services.Security
             if (existingPlayer == null)
                 return new PlayerResponse("Player not found");
 
+            existingPlayer.PersonalDetails.FirstName = player.PersonalDetails.FirstName;
+            existingPlayer.PersonalDetails.LastName = player.PersonalDetails.LastName;
+            existingPlayer.PersonalDetails.Email = player.PersonalDetails.Email;
+            existingPlayer.PersonalDetails.Birthdate = player.PersonalDetails.Birthdate;
+
             try
             {
                 _playerRepository.Update(existingPlayer);

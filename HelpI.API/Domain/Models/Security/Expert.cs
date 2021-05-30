@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Models.Security
 {
-    public class Expert : Person
+    public class Expert : User
     {
         public IList<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
     }
 }
+

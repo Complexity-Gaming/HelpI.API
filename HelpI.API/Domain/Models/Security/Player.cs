@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Models.Security
 {
-    public class Player : Person
+    public class Player : User
     {
-        public List<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
     }
 }
