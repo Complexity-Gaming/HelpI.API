@@ -22,34 +22,35 @@ namespace HelpI.API.Domain.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+           
+            //// Player Entity
+            builder.Entity<Player>().ToTable("Players");
+            // Constraints
+            builder.Entity<Player>().HasKey(p => p.Id);
+            builder.Entity<Player>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Player>().Property(p => p.FirstName).IsRequired().HasMaxLength(30);
+            builder.Entity<Player>().Property(p => p.LastName).IsRequired();
+            builder.Entity<Player>().Property(p => p.Email).IsRequired().HasMaxLength(15);
+            builder.Entity<Player>().Property(p => p.Password).IsRequired().HasMaxLength(15);
+            builder.Entity<Player>().Property(p => p.Birthdate).IsRequired();
+
             // Expert Entity
             builder.Entity<Expert>().ToTable("Experts");
+
+            // Constraints
+            builder.Entity<Expert>().HasKey(p => p.Id);
+            builder.Entity<Expert>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Expert>().Property(p => p.FirstName).IsRequired().HasMaxLength(30);
+            builder.Entity<Expert>().Property(p => p.LastName).IsRequired();
+            builder.Entity<Expert>().Property(p => p.Email).IsRequired().HasMaxLength(15);
+            builder.Entity<Expert>().Property(p => p.Password).IsRequired().HasMaxLength(15);
+            builder.Entity<Expert>().Property(p => p.Birthdate).IsRequired();
 
             // Relationships
             builder.Entity<Expert>()
                .HasMany(p => p.TrainingMaterials)
                .WithOne(p => p.CreatedBy)
                 .HasForeignKey(p => p.ExpertId);
-
-            // Constraints
-            builder.Entity<Expert>().HasKey(p => p.Id);
-            builder.Entity<Expert>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Expert>().OwnsOne(p => p.PersonalDetails).Property(p => p.FirstName).IsRequired().HasMaxLength(30);
-            builder.Entity<Expert>().OwnsOne(p => p.PersonalDetails).Property(p => p.LastName).IsRequired();
-            builder.Entity<Expert>().OwnsOne(p => p.PersonalDetails).Property(p => p.Email).IsRequired().HasMaxLength(15);
-            builder.Entity<Expert>().OwnsOne(p => p.PersonalDetails).Property(p => p.Password).IsRequired().HasMaxLength(15);
-            builder.Entity<Expert>().OwnsOne(p => p.PersonalDetails).Property(p => p.Birthdate).IsRequired();
-
-            //// Player Entity
-            builder.Entity<Player>().ToTable("Players");
-            // Constraints
-            builder.Entity<Player>().HasKey(p => p.Id);
-            builder.Entity<Player>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Player>().OwnsOne(p => p.PersonalDetails).Property(p => p.FirstName).IsRequired().HasMaxLength(30);
-            builder.Entity<Player>().OwnsOne(p => p.PersonalDetails).Property(p => p.LastName).IsRequired();
-            builder.Entity<Player>().OwnsOne(p => p.PersonalDetails).Property(p => p.Email).IsRequired().HasMaxLength(15);
-            builder.Entity<Player>().OwnsOne(p => p.PersonalDetails).Property(p => p.Password).IsRequired().HasMaxLength(15);
-            builder.Entity<Player>().OwnsOne(p => p.PersonalDetails).Property(p => p.Birthdate).IsRequired();
 
 
             // Training Material Entity
