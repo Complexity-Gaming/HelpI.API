@@ -74,9 +74,10 @@ namespace HelpI.API.Application.Services.Security
             if (existingExpert == null)
                 return new ExpertResponse("Expert Not Found");
 
-            existingExpert.Name = expert.Name;
+            existingExpert.FirstName = expert.FirstName;
+            existingExpert.LastName = expert.LastName;
             existingExpert.Email = expert.Email;
-            existingExpert.Password = expert.Password;
+            existingExpert.Birthdate = expert.Birthdate;
 
             try
             {

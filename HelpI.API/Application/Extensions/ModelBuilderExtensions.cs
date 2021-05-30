@@ -15,8 +15,9 @@ namespace HelpI.API.Application.Extensions
             foreach (var entity in builder.Model.GetEntityTypes())
             {
                 entity.SetTableName(entity.GetTableName().ToSnakeCase());
+               // if (entity.GetTableName() == "experts" || entity.GetTableName() == "players") continue;
 
-                foreach (var property in entity.GetProperties())
+                    foreach (var property in entity.GetProperties())
                 {
                     var tableIdentifier = StoreObjectIdentifier.Table(entity.GetTableName(), null);
                     property.SetColumnName(property.GetColumnName(tableIdentifier).ToSnakeCase());

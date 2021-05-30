@@ -14,7 +14,6 @@ namespace HelpI.API.Application.Transform.Mapping
     {
         public ResourceToModelProfile()
         {
-            CreateMap<SavePersonResource, Person>();
             CreateMap<SavePlayerResource, Player>();
             CreateMap<SaveExpertResource, Expert>();
             CreateMap<SaveTrainingMaterialResource, TrainingMaterial>();

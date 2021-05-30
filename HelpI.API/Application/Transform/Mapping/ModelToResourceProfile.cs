@@ -14,9 +14,13 @@ namespace HelpI.API.Application.Transform.Mapping
     {
         public ModelToResourceProfile()
         {
-            CreateMap<Person, PersonResource>();
-            CreateMap<Player, PlayerResource>();
-            CreateMap<Expert, ExpertResource>();
+            CreateMap<Player, PlayerResource>()
+                .ForMember(src => src.Birthdate,
+                opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
+
+            CreateMap<Expert, ExpertResource>()
+                .ForMember(src => src.Birthdate,
+                opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
             CreateMap<TrainingMaterial, TrainingMaterialResource>();
         }
     }

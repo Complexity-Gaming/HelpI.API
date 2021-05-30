@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Application.Transform.Resources
 {
-    public class ExpertResource : PersonResource
+    public class ExpertResource : PlayerResource
     {
     }
 }
