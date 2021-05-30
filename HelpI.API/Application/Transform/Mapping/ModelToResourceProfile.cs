@@ -21,7 +21,21 @@ namespace HelpI.API.Application.Transform.Mapping
             CreateMap<Expert, ExpertResource>()
                 .ForMember(src => src.Birthdate,
                 opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
-            CreateMap<TrainingMaterial, TrainingMaterialResource>();
+
+            CreateMap<TrainingMaterial, TrainingMaterialResource>()
+                 .ForMember(src => src.TrainingMaterialId,
+                opt => opt.MapFrom(src => src.TrainingMaterialId.TrainingMaterialId))
+                .ForMember(src => src.VideoUri,
+                opt => opt.MapFrom(src => src.TrainingDetails.VideoUri))
+
+                .ForMember(src => src.PublishedDate,
+                opt => opt.MapFrom(src => src.TrainingDetails.PublishedDate))
+
+                .ForMember(src => src.Currency,
+                opt => opt.MapFrom(src => src.TrainingDetails.Currency))
+
+                .ForMember(src => src.Price,
+                opt => opt.MapFrom(src => src.TrainingDetails.Price));
         }
     }
 }
