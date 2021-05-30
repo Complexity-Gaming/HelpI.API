@@ -9,7 +9,8 @@ namespace HelpI.API.Domain.Models.Training
     public class TrainingMaterial
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
+        public TrainingId TrainingMaterialId;
+        public TrainingDetail TrainingDetails { get; set; }
         public int ExpertId { get; set; }
         public Expert CreatedBy { get; set; }
         public List<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }

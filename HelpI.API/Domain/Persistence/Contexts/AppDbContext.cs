@@ -55,11 +55,24 @@ namespace HelpI.API.Domain.Persistence.Contexts
 
             // Training Material Entity
             builder.Entity<TrainingMaterial>().ToTable("TrainingMaterials");
-            
+
             // Constraints
             builder.Entity<TrainingMaterial>().HasKey(p => p.Id);
             builder.Entity<TrainingMaterial>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<TrainingMaterial>().Property(p => p.Price).IsRequired();
+            builder.Entity<TrainingMaterial>().OwnsOne(m => m.TrainingDetails, a => {
+                a.ToTable("TrainingDetails");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.VideoUri);
+                a.Property(p => p.PublishedDate);
+                a.Property(p => p.Currency);
+            });
+            builder.Entity<TrainingMaterial>().OwnsOne(m => m.TrainingMaterialId, a => {
+                a.ToTable("TrainingIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.TrainingMaterialId).HasColumnName("TrainingId") ;
+            });
 
             // PlayerTraininmaterial Entity
             builder.Entity<PlayerTrainingMaterial>().ToTable("PlayerTrainings");
