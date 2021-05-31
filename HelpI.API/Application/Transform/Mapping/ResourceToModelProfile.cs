@@ -18,8 +18,15 @@ namespace HelpI.API.Application.Transform.Mapping
         {
             CreateMap<SavePlayerResource, Player>();
             CreateMap<SaveExpertResource, Expert>();
-            CreateMap<SaveTrainingMaterialResource, TrainingMaterial>();
+  
             CreateMap<SaveIndividualSessionResource, IndividualSession>();
+
+            CreateMap<SaveTrainingMaterialResource, TrainingMaterial>()
+                .ForMember(src => src.TrainingMaterialId,
+                opt => opt.MapFrom(src => new TrainingId(src.TrainingMaterialId)))
+                .ForMember(src => src.TrainingDetails,
+                opt => opt.MapFrom(src => new TrainingDetail(src.VideoUri, DateTime.Now, src.Currency, src.Price)));
+
         }
     }
 }

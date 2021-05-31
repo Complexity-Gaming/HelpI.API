@@ -12,6 +12,5 @@ namespace HelpI.API.Domain.Models.Training
         public Player Player { get; set; }
         public int TrainingMaterialId { get; set; }
         public TrainingMaterial TrainingMaterial { get; set; }
-       
     }
 }
