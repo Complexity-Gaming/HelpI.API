@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using HelpI.API.Application.Transform.Resources;
+using HelpI.API.Application.Transform.Resources.Application;
 using HelpI.API.Application.Transform.Resources.Session;
 using HelpI.API.Domain.Models;
+using HelpI.API.Domain.Models.Application;
 using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Session;
 using HelpI.API.Domain.Models.Training;
@@ -23,8 +25,10 @@ namespace HelpI.API.Application.Transform.Mapping
             CreateMap<Expert, ExpertResource>()
                 .ForMember(src => src.Birthdate,
                 opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
-
+                
+            CreateMap<CoachApplication, CoachApplicationResource>();
             CreateMap<IndividualSession, IndividualSessionResource>();
+            
             CreateMap<TrainingMaterial, TrainingMaterialResource>()
                  .ForMember(src => src.TrainingMaterialId,
                 opt => opt.MapFrom(src => src.TrainingMaterialId.TrainingMaterialId))
@@ -39,6 +43,7 @@ namespace HelpI.API.Application.Transform.Mapping
 
                 .ForMember(src => src.Price,
                 opt => opt.MapFrom(src => src.TrainingDetails.Price));
+
         }
     }
 }
