@@ -1,6 +1,7 @@
 ﻿using HelpI.API.Application.Extensions;
 using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Training;
+using HelpI.API.Domain.Models.Application;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<Expert> Experts { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
+
+        public DbSet<CoachApplication> CoachApplications { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -78,6 +81,13 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 .HasOne(pt => pt.TrainingMaterial) // PlayerTrainingMaterial Has one Training Material
                 .WithMany(t => t.PlayerTrainingMaterials) // TraningMaterial Has many PlayerTrainingMaterial
                 .HasForeignKey(pt => pt.TrainingMaterialId); // PlayerTrainingMaterial Has ForeignKey from TrainingMaterial
+
+            //CoachApplication entity
+            builder.Entity<CoachApplication>().ToTable("CoachApplication");
+
+            //Constraints
+            builder.Entity<CoachApplication>().HasKey(p => p.Id);
+            builder.Entity<CoachApplication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
 
             builder.ApplySnakeCaseNamingConvention();
         }
