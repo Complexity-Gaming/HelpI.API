@@ -18,7 +18,6 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
         public DbSet<IndividualSession> IndividualSessions { get; set; }
-
         public DbSet<CoachApplication> CoachApplications { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -98,11 +97,25 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 .HasForeignKey(pt => pt.TrainingMaterialId); // PlayerTrainingMaterial Has ForeignKey from TrainingMaterial
 
             //CoachApplication entity
-            builder.Entity<CoachApplication>().ToTable("CoachApplication");
+            builder.Entity<CoachApplication>().ToTable("CoachApplications");
 
             //Constraints
             builder.Entity<CoachApplication>().HasKey(p => p.Id);
             builder.Entity<CoachApplication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<CoachApplication>().OwnsOne(m => m.ApplicationDetails, a => {
+                a.ToTable("AplicationDetails");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.Description);
+                a.Property(p => p.VideoApplication);
+                a.Property(p => p.Passed);
+            });
+            builder.Entity<CoachApplication>().OwnsOne(m => m.CoachAplicationId, a => {
+                a.ToTable("AplicationsIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.CoachApplicationId).HasColumnName("AplicationId");
+            });
 
             // Individual Sesion Entity
             builder.Entity<IndividualSession>().ToTable("IndividualSessions");
@@ -110,7 +123,26 @@ namespace HelpI.API.Domain.Persistence.Contexts
             // Constraints
             builder.Entity<IndividualSession>().HasKey(p => p.Id);
             builder.Entity<IndividualSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-
+            builder.Entity<IndividualSession>().OwnsOne(m => m.SessionCalification, a =>  {
+                a.ToTable("Califications");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.Comment);
+                a.Property(p => p.Calification);
+            });
+            builder.Entity<IndividualSession>().OwnsOne(m => m.SessionDetails, a =>{
+                a.ToTable("SessionDetails");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.Date);
+                a.Property(p => p.Duration);
+            });
+            builder.Entity<IndividualSession>().OwnsOne(m => m.IndividualSessionId, a => {
+                a.ToTable("InvSessionsIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.IndividualSessionId).HasColumnName("IndSessionId");
+            });
 
 
             builder.ApplySnakeCaseNamingConvention();

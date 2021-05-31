@@ -5,15 +5,25 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Models.Session
 {
-    public class SessionCalification
+    public class SessionCalification : ValueObject
     {
-        public SessionCalification(string comment, short calification)
+        public SessionCalification()
         {
-            this.comment = comment;
-            this.calification = calification;
         }
 
-        public string comment { get; private set; }
-        public short calification { get; private set; }
+        public SessionCalification(string comment, short calification)
+        {
+            this.Comment = comment;
+            this.Calification = calification;
+        }
+
+        public string Comment { get; private set; }
+        public short Calification { get; private set; }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Comment;
+            yield return Calification;
+        }
     }
 }

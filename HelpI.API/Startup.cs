@@ -22,6 +22,14 @@ using HelpI.API.Domain.Persistence.Repositories.Training;
 using HelpI.API.Infrastructure.Persistence.Repositories.Training;
 using HelpI.API.Infrastructure.Persistence.Repositories;
 using HelpI.API.Application.Services.Security;
+using HelpI.API.Domain.Persistence.Repositories.Application;
+using HelpI.API.Infrastructure.Persistence.Repositories.Application;
+using HelpI.API.Domain.Persistence.Repositories.Session;
+using HelpI.API.Infrastructure.Persistence.Repositories.Session;
+using HelpI.API.Domain.Services.Application;
+using HelpI.API.Application.Services.Application;
+using HelpI.API.Domain.Services.Session;
+using HelpI.API.Application.Services.Session;
 
 namespace HelpI.API
 {
@@ -51,12 +59,16 @@ namespace HelpI.API
             services.AddScoped<IExpertRepository, ExpertRepository>();
             services.AddScoped<ITrainingMaterialRepository, TrainingMaterialRepository>();
             services.AddScoped<IPlayerTrainingMaterialRepository, PlayerTrainingMaterialRepository>();
+            services.AddScoped<ICoachApplicationRepository, CoachApplicationRepository>();
+            services.AddScoped<IIndividualSessionRepository, IndividualSessionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IExpertService, ExpertService>();
             services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
+            services.AddScoped<ICoachApplicationService, CoachApplicationService>();
+            services.AddScoped<IIndividualSessionService, IndividualSessionService>();
 
             // Endpoints Case Conventions Configuration
 

@@ -7,6 +7,6 @@ namespace HelpI.API.Application.Transform.Resources.Session
 {
     public class SaveIndividualSessionResource
     {
-
+        public string IndividualSessionId { get; set; }
     }
 }

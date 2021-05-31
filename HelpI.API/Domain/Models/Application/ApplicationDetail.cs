@@ -5,9 +5,14 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Models.Application
 {
-    public class ApplicationDetails
+    public class ApplicationDetail : ValueObject
     {
-        public ApplicationDetails(string description, Uri videoApplication, bool passed)
+        public ApplicationDetail()
+        {
+
+        }
+
+        public ApplicationDetail(string description, Uri videoApplication, bool passed)
         {
             Description = description;
             VideoApplication = videoApplication;
@@ -17,5 +22,12 @@ namespace HelpI.API.Domain.Models.Application
         public string Description { get; private set; }
         public Uri VideoApplication { get; private set; }
         public bool Passed { get; private set; }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Description;
+            yield return VideoApplication;
+            yield return Passed; 
+        }
     }
 }
