@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using HelpI.API.Application.Services.Security;
 using HelpI.API.Domain.Models.Security;
 
-namespace HelpI.API.Test
+namespace HelpI.API.Test.IntegrationTests
 {
     public class ExpertServiceTest : BaseServiceTest
     {
