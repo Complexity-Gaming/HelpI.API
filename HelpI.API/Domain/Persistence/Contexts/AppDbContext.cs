@@ -1,5 +1,6 @@
 ﻿using HelpI.API.Application.Extensions;
 using HelpI.API.Domain.Models.Security;
+using HelpI.API.Domain.Models.Session;
 using HelpI.API.Domain.Models.Training;
 using HelpI.API.Domain.Models.Application;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<Expert> Experts { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
+        public DbSet<IndividualSession> IndividualSessions { get; set; }
 
         public DbSet<CoachApplication> CoachApplications { get; set; }
 
@@ -58,11 +60,24 @@ namespace HelpI.API.Domain.Persistence.Contexts
 
             // Training Material Entity
             builder.Entity<TrainingMaterial>().ToTable("TrainingMaterials");
-            
+
             // Constraints
             builder.Entity<TrainingMaterial>().HasKey(p => p.Id);
             builder.Entity<TrainingMaterial>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<TrainingMaterial>().Property(p => p.Price).IsRequired();
+            builder.Entity<TrainingMaterial>().OwnsOne(m => m.TrainingDetails, a => {
+                a.ToTable("TrainingDetails");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.VideoUri);
+                a.Property(p => p.PublishedDate);
+                a.Property(p => p.Currency);
+            });
+            builder.Entity<TrainingMaterial>().OwnsOne(m => m.TrainingMaterialId, a => {
+                a.ToTable("TrainingIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.TrainingMaterialId).HasColumnName("TrainingId") ;
+            });
 
             // PlayerTraininmaterial Entity
             builder.Entity<PlayerTrainingMaterial>().ToTable("PlayerTrainings");
@@ -88,6 +103,15 @@ namespace HelpI.API.Domain.Persistence.Contexts
             //Constraints
             builder.Entity<CoachApplication>().HasKey(p => p.Id);
             builder.Entity<CoachApplication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+
+            // Individual Sesion Entity
+            builder.Entity<IndividualSession>().ToTable("IndividualSessions");
+
+            // Constraints
+            builder.Entity<IndividualSession>().HasKey(p => p.Id);
+            builder.Entity<IndividualSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+
+
 
             builder.ApplySnakeCaseNamingConvention();
         }

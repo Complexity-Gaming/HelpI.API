@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using HelpI.API.Domain.Models.Training;
 using HelpI.API.Application.Services.Training;
 
-namespace HelpI.API.Test
+namespace HelpI.API.Test.IntegrationTests
 {
     public class TrainingMaterialServiceTest : BaseServiceTest
     {
