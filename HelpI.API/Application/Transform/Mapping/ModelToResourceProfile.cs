@@ -20,11 +20,11 @@ namespace HelpI.API.Application.Transform.Mapping
         {
             CreateMap<Player, PlayerResource>()
                 .ForMember(src => src.Birthdate,
-                opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
+                opt => opt.MapFrom(src => src.Birthdate.Date));
 
             CreateMap<Expert, ExpertResource>()
                 .ForMember(src => src.Birthdate,
-                opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
+                opt => opt.MapFrom(src => src.Birthdate.Date));
                 
             CreateMap<CoachApplication, CoachApplicationResource>();
             CreateMap<IndividualSession, IndividualSessionResource>();
