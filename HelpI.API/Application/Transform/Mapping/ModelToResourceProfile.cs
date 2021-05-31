@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using HelpI.API.Application.Transform.Resources;
+using HelpI.API.Application.Transform.Resources.Session;
 using HelpI.API.Domain.Models;
 using HelpI.API.Domain.Models.Security;
+using HelpI.API.Domain.Models.Session;
 using HelpI.API.Domain.Models.Training;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,7 @@ namespace HelpI.API.Application.Transform.Mapping
                 .ForMember(src => src.Birthdate,
                 opt => opt.MapFrom(src => src.Birthdate.Date.ToString()));
 
+            CreateMap<IndividualSession, IndividualSessionResource>();
             CreateMap<TrainingMaterial, TrainingMaterialResource>()
                  .ForMember(src => src.TrainingMaterialId,
                 opt => opt.MapFrom(src => src.TrainingMaterialId.TrainingMaterialId))

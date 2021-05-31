@@ -1,5 +1,6 @@
 ﻿using HelpI.API.Application.Extensions;
 using HelpI.API.Domain.Models.Security;
+using HelpI.API.Domain.Models.Session;
 using HelpI.API.Domain.Models.Training;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,6 +16,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<Expert> Experts { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
+        public DbSet<IndividualSession> IndividualSessions { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -91,6 +93,14 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 .HasOne(pt => pt.TrainingMaterial) // PlayerTrainingMaterial Has one Training Material
                 .WithMany(t => t.PlayerTrainingMaterials) // TraningMaterial Has many PlayerTrainingMaterial
                 .HasForeignKey(pt => pt.TrainingMaterialId); // PlayerTrainingMaterial Has ForeignKey from TrainingMaterial
+
+            // Individual Sesion Entity
+            builder.Entity<IndividualSession>().ToTable("IndividualSessions");
+
+            // Constraints
+            builder.Entity<IndividualSession>().HasKey(p => p.Id);
+            builder.Entity<IndividualSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+
 
             builder.ApplySnakeCaseNamingConvention();
         }

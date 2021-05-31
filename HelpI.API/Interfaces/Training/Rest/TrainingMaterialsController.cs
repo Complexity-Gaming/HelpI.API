@@ -24,6 +24,7 @@ namespace HelpI.API.Interfaces.Training.Rest
             _trainingMaterialService = trainingMaterialService;
             _mapper = mapper;
         }
+
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<TrainingMaterialResource>), 200)]
         public async Task<IEnumerable<TrainingMaterialResource>> GetAllAsync()

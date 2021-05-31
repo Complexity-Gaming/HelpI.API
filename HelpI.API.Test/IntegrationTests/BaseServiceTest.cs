@@ -4,7 +4,7 @@ using HelpI.API.Domain.Persistence.Repositories.Training;
 using Moq;
 using NUnit.Framework;
 
-namespace HelpI.API.Test
+namespace HelpI.API.Test.IntegrationTests
 {
     public abstract class BaseServiceTest
     {
