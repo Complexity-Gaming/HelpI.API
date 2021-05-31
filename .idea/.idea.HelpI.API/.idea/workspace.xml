@@ -4,15 +4,7 @@
     <projectFile>HelpI.API/HelpI.API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Training/TrainingMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Training/TrainingMaterial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/appsettings.json" afterDir="false" />
-    </list>
+    <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +87,7 @@
       <workItem from="1622465198640" duration="722000" />
       <workItem from="1622466110771" duration="230000" />
       <workItem from="1622466700626" duration="142000" />
-      <workItem from="1622466948338" duration="3345000" />
+      <workItem from="1622466948338" duration="3413000" />
     </task>
     <servers />
   </component>
