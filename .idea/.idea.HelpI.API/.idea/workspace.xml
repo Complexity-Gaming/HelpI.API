@@ -13,10 +13,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/HelpI.API/appsettings.json" />
@@ -88,6 +84,7 @@
       <workItem from="1622466110771" duration="230000" />
       <workItem from="1622466700626" duration="142000" />
       <workItem from="1622466948338" duration="3413000" />
+      <workItem from="1622470471084" duration="34000" />
     </task>
     <servers />
   </component>
