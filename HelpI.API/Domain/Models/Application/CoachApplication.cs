@@ -8,6 +8,7 @@ namespace HelpI.API.Domain.Models.Application
     public class CoachApplication
     {
         public string Id { get; set; }
-        public ApplicationDetails ApplicationDetails { get; set; }
+        public AplicationId CoachAplicationId { get; }
+        public ApplicationDetail ApplicationDetails { get; }
     }
 }

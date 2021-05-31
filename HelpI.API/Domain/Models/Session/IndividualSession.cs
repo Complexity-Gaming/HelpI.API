@@ -8,8 +8,9 @@ namespace HelpI.API.Domain.Models.Session
     public class IndividualSession
     {
         public int Id { get; set; }
-        public SessionCalification Calification { get; set; }
-        public SessionDetails Details { get; set; }
+        public IndSessionId IndividualSessionId { get; }
+        public SessionCalification SessionCalification { get; set; }
+        public SessionDetails SessionDetails { get; set; }
 
     }
 }

@@ -9,6 +9,7 @@ namespace HelpI.API.Application.Transform.Resources.Application
     public class CoachApplicationResource
     {
         public int Id { get; set; }
-        public ApplicationDetails ApplicationDetails { get; set; }
+        public string CoachAplicationId { get; set; }
+        public ApplicationDetail ApplicationDetails { get; set; }
     }
 }
