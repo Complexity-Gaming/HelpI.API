@@ -11,6 +11,5 @@ namespace HelpI.API.Application.Transform.Resources.Session
         public int Id { get; set; }
         public string IndividualSessionId { get; set; }
         public SessionCalification Calification { get; set; }
-        public SessionDetails Details { get; set; }
     }
 }

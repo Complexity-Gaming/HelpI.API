@@ -61,6 +61,7 @@ namespace HelpI.API
             services.AddScoped<IPlayerTrainingMaterialRepository, PlayerTrainingMaterialRepository>();
             services.AddScoped<ICoachApplicationRepository, CoachApplicationRepository>();
             services.AddScoped<IIndividualSessionRepository, IndividualSessionRepository>();
+            services.AddScoped<IScheduledSessionRepository, ScheduledSessionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IPlayerService, PlayerService>();
@@ -69,6 +70,7 @@ namespace HelpI.API
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
             services.AddScoped<ICoachApplicationService, CoachApplicationService>();
             services.AddScoped<IIndividualSessionService, IndividualSessionService>();
+            services.AddScoped<IScheduledSessionService, ScheduledSessionService>();
 
             // Endpoints Case Conventions Configuration
 

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HelpI.API.Application.Transform.Resources;
-using HelpI.API.Application.Transform.Resources.Application;
 using HelpI.API.Application.Transform.Resources.Session;
 using HelpI.API.Domain.Models;
 using HelpI.API.Domain.Models.Application;
@@ -11,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelpI.API.Application.Transform.Resources.Application;
+using HelpI.API.Application.Transform.Resources.Training;
 
 namespace HelpI.API.Application.Transform.Mapping
 {
@@ -28,7 +29,8 @@ namespace HelpI.API.Application.Transform.Mapping
                 
             CreateMap<CoachApplication, CoachApplicationResource>();
             CreateMap<IndividualSession, IndividualSessionResource>();
-            
+            CreateMap<ScheduledSession, ScheduledSessionResource>();
+
             CreateMap<TrainingMaterial, TrainingMaterialResource>()
                  .ForMember(src => src.TrainingMaterialId,
                 opt => opt.MapFrom(src => src.TrainingMaterialId.TrainingMaterialId))
