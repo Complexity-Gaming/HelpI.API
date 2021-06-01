@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using HelpI.API.Domain.Models;
 using HelpI.API.Application.Transform.Resources;
 using System;
@@ -11,7 +12,11 @@ using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Training;
 using HelpI.API.Domain.Models.Application;
 using HelpI.API.Application.Transform.Resources.Training;
+using HelpI.API.Application.Transform.Resources.Application;
+using HelpI.API.Application.Transform.Resources.Session;
+using HelpI.API.Application.Transform.Resources.Training;
 using HelpI.API.Domain.Models.Session;
+using ApplicationId = HelpI.API.Domain.Models.Application.ApplicationId;
 
 
 namespace HelpI.API.Application.Transform.Mapping
@@ -22,8 +27,14 @@ namespace HelpI.API.Application.Transform.Mapping
         {
             CreateMap<SavePlayerResource, Player>();
             CreateMap<SaveExpertResource, Expert>();
- 
-            CreateMap<SaveCoachAplicationResource, CoachApplication>();
+
+            CreateMap<SaveExpertApplicationResource, ExpertApplication>()
+                .ForMember(src => src.ExpertApplicationId,
+                    opt => opt.MapFrom(src => 
+                        new ApplicationId(src.ExpertApplicationId)))
+                .ForMember(src => src.ApplicationDetails,
+                    opt => opt.MapFrom(src => 
+                        new ApplicationDetail(src.Description, src.VideoApplication, EApplicationStatus.Pending, null)));
 
   
             CreateMap<SaveIndividualSessionResource, IndividualSession>();

@@ -18,7 +18,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
         public DbSet<IndividualSession> IndividualSessions { get; set; }
-        public DbSet<CoachApplication> CoachApplications { get; set; }
+        public DbSet<ExpertApplication> ExpertApplications { get; set; }
         public DbSet<ScheduledSession> ScheduledSessions { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -38,6 +38,11 @@ namespace HelpI.API.Domain.Persistence.Contexts
             builder.Entity<Player>().Property(p => p.Email).IsRequired().HasMaxLength(15);
             builder.Entity<Player>().Property(p => p.Password).IsRequired().HasMaxLength(15);
             builder.Entity<Player>().Property(p => p.Birthdate).IsRequired();
+            // Relationships
+            builder.Entity<Player>()
+                .HasMany(p => p.ExpertApplications)
+                .WithOne(p => p.Applicant)
+                .HasForeignKey(p => p.PlayerId);
 
             // Expert Entity
             builder.Entity<Expert>().ToTable("Experts");
@@ -79,14 +84,13 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 a.Property(p => p.TrainingMaterialId).HasColumnName("TrainingId") ;
             });
 
-            // PlayerTraininmaterial Entity
+            // PlayerTrainingmaterial Entity
             builder.Entity<PlayerTrainingMaterial>().ToTable("PlayerTrainings");
 
             // Constraints
             builder.Entity<PlayerTrainingMaterial>().HasKey(p => new { p.PlayerId, p.TrainingMaterialId});
 
             // Relationships
-
             builder.Entity<PlayerTrainingMaterial>()
                 .HasOne(pt => pt.Player)// PlayerTrainingMaterial Has one Player
                 .WithMany(t => t.PlayerTrainingMaterials) // Player Has many PlayerTrainingMaterial
@@ -97,25 +101,26 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 .WithMany(t => t.PlayerTrainingMaterials) // TraningMaterial Has many PlayerTrainingMaterial
                 .HasForeignKey(pt => pt.TrainingMaterialId); // PlayerTrainingMaterial Has ForeignKey from TrainingMaterial
 
-            //CoachApplication entity
-            builder.Entity<CoachApplication>().ToTable("CoachApplications");
+            //ExpertApplication entity
+            builder.Entity<ExpertApplication>().ToTable("ExpertApplications");
 
             //Constraints
-            builder.Entity<CoachApplication>().HasKey(p => p.Id);
-            builder.Entity<CoachApplication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<CoachApplication>().OwnsOne(m => m.ApplicationDetails, a => {
-                a.ToTable("AplicationDetails");
+            builder.Entity<ExpertApplication>().HasKey(p => p.Id);
+            builder.Entity<ExpertApplication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<ExpertApplication>().OwnsOne(m => m.ApplicationDetails, a => {
+                a.ToTable("AppDetails");
                 a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
                 a.HasKey("Id");
                 a.Property(p => p.Description);
                 a.Property(p => p.VideoApplication);
-                a.Property(p => p.Passed);
+                a.Property(p => p.ReviewComment);
+                a.Property(p => p.Status);
             });
-            builder.Entity<CoachApplication>().OwnsOne(m => m.CoachAplicationId, a => {
-                a.ToTable("AplicationsIds");
+            builder.Entity<ExpertApplication>().OwnsOne(m => m.ExpertApplicationId, a => {
+                a.ToTable("ApplicationsIds");
                 a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
                 a.HasKey("Id");
-                a.Property(p => p.CoachApplicationId).HasColumnName("AplicationId");
+                a.Property(p => p.ExpertApplicationId).HasColumnName("ApplicationId");
             });
 
             // Individual Sesion Entity

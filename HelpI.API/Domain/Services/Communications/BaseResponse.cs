@@ -7,9 +7,9 @@ namespace HelpI.API.Domain.Services.Communications
 {
     public abstract class BaseResponse<T>
     {
-        public bool Success { get; set; }
+        public bool Success { get; private set; }
         public string Message { get; protected set; }
-        public T Resource { get; set; }
+        public T Resource { get; private set; }
 
         public BaseResponse(T resource)
         {

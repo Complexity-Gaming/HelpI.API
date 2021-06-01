@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Services.Communications
 {
-    public class CoachApplicationRespose : BaseResponse<CoachApplication>
+    public class ExpertApplicationResponse : BaseResponse<ExpertApplication>
     {
-        public CoachApplicationRespose(CoachApplication resource) : base(resource)
+        public ExpertApplicationResponse(ExpertApplication resource) : base(resource)
         {
         }
 
-        public CoachApplicationRespose(string message) : base(message)
+        public ExpertApplicationResponse(string message) : base(message)
         {
         }
     }

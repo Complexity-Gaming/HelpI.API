@@ -12,7 +12,7 @@ using HelpI.API.Domain.Models.Training;
 
 namespace HelpI.API.Interfaces.Training.Rest
 {
-    [Route("api/players/{playerId}/trainingMaterials")]
+    [Route("api/players/{playerId}/trainings")]
     [Produces("application/json")]
     [ApiController]
     public class PlayerTrainingMaterialsController : ControllerBase
