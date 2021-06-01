@@ -4,50 +4,7 @@
     <projectFile>HelpI.API/HelpI.API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Extensions/EnumExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Application/ExpertApplicationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ExpertApplicationResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ReviewResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/SaveExpertApplicationResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/EApplicationStatus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ExpertApplication.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Application/IExpertApplicationRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Application/IExpertApplicationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Application/ExpertApplicationRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/ApplicationsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/PlayerApplicationsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Extensions/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Extensions/StringExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Application/CoachApplicationService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Training/TrainingMaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Training/TrainingMaterialService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/CoachApplicationResource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/SaveCoachAplicationResource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/AplicationId.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/CoachApplication.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDetails.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Application/ICoachApplicationRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Training/ITrainingMaterialRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Training/ITrainingMaterialRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Services/Application/ICoachApplicationService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/BaseResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/BaseResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/CoachApplicationRespose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/ExpertApplicationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Application/CoachApplicationRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/CoachApplicationController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/ExpertTrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/ExpertTrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/TrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/TrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Startup.cs" afterDir="false" />
-    </list>
+    <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +22,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C3E4C2E9-CFE1-442E-80B2-6211DD3536D6/193/ConstructorBindingConvention.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
