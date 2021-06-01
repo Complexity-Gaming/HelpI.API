@@ -11,6 +11,5 @@ namespace HelpI.API.Domain.Persistence.Repositories.Training
     {
         Task<IEnumerable<TrainingMaterial>> ListAsync();
         Task<IEnumerable<TrainingMaterial>> ListByExpertIdAsync(int expertId);
-        Task AddAsync(TrainingMaterial trainingMaterial);
     }
 }

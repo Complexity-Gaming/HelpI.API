@@ -2,32 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Google.Protobuf.WellKnownTypes;
 
 namespace HelpI.API.Domain.Models.Application
 {
     public class ApplicationDetail : ValueObject
     {
-        public ApplicationDetail()
-        {
-
-        }
-
-        public ApplicationDetail(string description, Uri videoApplication, bool passed)
+        public ApplicationDetail(string description, Uri videoApplication, EApplicationStatus status, string reviewComment)
         {
             Description = description;
             VideoApplication = videoApplication;
-            Passed = passed;
+            Status = status;
+            ReviewComment = reviewComment;
         }
 
         public string Description { get; private set; }
         public Uri VideoApplication { get; private set; }
-        public bool Passed { get; private set; }
+        public string ReviewComment { get; private set; }
+        public EApplicationStatus Status { get; private set; }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Description;
             yield return VideoApplication;
-            yield return Passed; 
+            yield return Status; 
         }
     }
 }

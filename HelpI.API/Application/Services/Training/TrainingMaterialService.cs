@@ -63,7 +63,7 @@ namespace HelpI.API.Application.Services.Training
             }
             catch (Exception ex)
             {
-                return new TrainingMaterialResponse($"An error ocurred while uploading Training Material: {ex.Message}");
+                return new TrainingMaterialResponse($"An error occurred while uploading Training Material: {ex.Message}");
             }
         }
 
