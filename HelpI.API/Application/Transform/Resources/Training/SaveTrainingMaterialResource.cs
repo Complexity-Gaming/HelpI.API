@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HelpI.API.Application.Transform.Resources
+namespace HelpI.API.Application.Transform.Resources.Training
 {
     public class SaveTrainingMaterialResource
     {

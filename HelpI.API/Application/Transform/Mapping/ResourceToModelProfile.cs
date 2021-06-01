@@ -5,11 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelpI.API.Application.Transform.Resources.Application;
+using HelpI.API.Application.Transform.Resources.Session;
 using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Training;
 using HelpI.API.Domain.Models.Application;
-using HelpI.API.Application.Transform.Resources.Application;
-using HelpI.API.Application.Transform.Resources.Session;
+using HelpI.API.Application.Transform.Resources.Training;
 using HelpI.API.Domain.Models.Session;
 
 
@@ -26,6 +27,7 @@ namespace HelpI.API.Application.Transform.Mapping
 
   
             CreateMap<SaveIndividualSessionResource, IndividualSession>();
+            CreateMap<SaveScheduledSessionResource, ScheduledSession>();
 
             CreateMap<SaveTrainingMaterialResource, TrainingMaterial>()
                 .ForMember(src => src.TrainingMaterialId,

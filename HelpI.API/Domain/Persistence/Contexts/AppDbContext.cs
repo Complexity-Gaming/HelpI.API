@@ -19,6 +19,7 @@ namespace HelpI.API.Domain.Persistence.Contexts
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
         public DbSet<IndividualSession> IndividualSessions { get; set; }
         public DbSet<CoachApplication> CoachApplications { get; set; }
+        public DbSet<ScheduledSession> ScheduledSessions { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -130,20 +131,39 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 a.Property(p => p.Comment);
                 a.Property(p => p.Calification);
             });
-            builder.Entity<IndividualSession>().OwnsOne(m => m.SessionDetails, a =>{
-                a.ToTable("SessionDetails");
+            builder.Entity<IndividualSession>().OwnsOne(m => m.IndividualSessionId, a => {
+                a.ToTable("IndSessionsIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.IndividualSessionId).HasColumnName("IndSessionId");
+            });
+            
+            // Scheduled Sesion Entity
+            builder.Entity<ScheduledSession>().ToTable("ScheduledSessions");
+
+            // Constraints
+            builder.Entity<ScheduledSession>().HasKey(p => p.Id);
+            builder.Entity<ScheduledSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<ScheduledSession>().OwnsOne(m => m.Price, a => {
+                a.ToTable("Moneys");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.Ammount);
+                a.Property(p => p.Currency);
+            });
+            builder.Entity<ScheduledSession>().OwnsOne(m => m.ScheduledSessionId, a => {
+                a.ToTable("ScheSessionsIds");
+                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
+                a.HasKey("Id");
+                a.Property(p => p.ScheduledSessionId).HasColumnName("ScheSessionId");
+            });
+            builder.Entity<ScheduledSession>().OwnsOne(m => m.SessionDate, a =>{
+                a.ToTable("SessionDate");
                 a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
                 a.HasKey("Id");
                 a.Property(p => p.Date);
                 a.Property(p => p.Duration);
             });
-            builder.Entity<IndividualSession>().OwnsOne(m => m.IndividualSessionId, a => {
-                a.ToTable("InvSessionsIds");
-                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
-                a.HasKey("Id");
-                a.Property(p => p.IndividualSessionId).HasColumnName("IndSessionId");
-            });
-
 
             builder.ApplySnakeCaseNamingConvention();
         }
