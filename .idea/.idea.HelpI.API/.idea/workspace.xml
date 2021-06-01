@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Session/ScheduledSessionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveScheduledSessionResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/ScheduledSessionResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheSessionId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheduledSession.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IScheduledSessionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/ScheduledSessionResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSessionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/ScheduledSessionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/ExpertTrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/ExpertTrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/TrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/TrainingMaterialsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/appsettings.json" afterDir="false" />
     </list>
-    <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,15 +22,37 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C3E4C2E9-CFE1-442E-80B2-6211DD3536D6/193/ConstructorBindingConvention.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -132,18 +130,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.2562297" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.42071882" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.42071882" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -216,7 +213,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
