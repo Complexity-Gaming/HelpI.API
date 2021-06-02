@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelpI.API.Application.Extensions;
 
 namespace HelpI.API.Interfaces.Session.Rest
 {
@@ -46,6 +47,18 @@ namespace HelpI.API.Interfaces.Session.Rest
             return Ok(individualSessionResource);
         }
 
+        [HttpPost("{id}")]
+        public async Task<ActionResult> EndSession(int id,[FromBody] SessionCalificationResource resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+            var result = await _individualSessionService.EndSession(id, new SessionCalification(resource.Comment, resource.Calification));
+            if (!result.Success)
+                return BadRequest(result.Message);
+            var scheduleResource = _mapper.Map<IndividualSession, IndividualSessionResource>(result.Resource);
+
+            return Ok(scheduleResource);
+        }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

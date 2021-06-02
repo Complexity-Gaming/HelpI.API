@@ -49,7 +49,7 @@ namespace HelpI.API.Application.Services.Training
             }
             catch (Exception ex)
             {
-                return new PlayerTrainingMaterialResponse($"An Error acurred while purchasing the training material: { ex.Message }");
+                return new PlayerTrainingMaterialResponse($"An Error accurred while purchasing the training material: { ex.Message }");
             }
         }
     }

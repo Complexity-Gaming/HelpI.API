@@ -5,8 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SessionCalificationResource.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Application/ExpertApplicationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Application/ExpertApplicationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Session/IndividualSessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Session/IndividualSessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Session/ScheduledSessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Session/ScheduledSessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Services/Training/PlayerTrainingMaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Services/Training/PlayerTrainingMaterialService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveIndividualSessionResource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveScheduledSessionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveScheduledSessionResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/ScheduledSessionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/ScheduledSessionResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Money.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Money.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndSessionId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndSessionId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheduledSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheduledSession.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IIndividualSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IIndividualSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IScheduledSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IScheduledSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IIndividualSessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IIndividualSessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/IndividualSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/IndividualSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/ScheduledSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/ScheduledSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/IndividualSessionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/IndividualSessionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,103 +47,75 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C3E4C2E9-CFE1-442E-80B2-6211DD3536D6/193/ConstructorBindingConvention.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C3E4C2E9-CFE1-442E-80B2-6211DD3536D6/193/ConstructorBindingConvention.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/diego/source/repos/HelpI.API/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Training/TrainingMaterial.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/appsettings.json" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDetails.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheSessionId.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheduledSession.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IScheduledSessionRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/ScheduledSessionResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveScheduledSessionResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/ExpertTrainingMaterialsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/TrainingMaterialsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/ScheduledSessionReponse.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSession.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/ScheduledSessionRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSessionService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Session/ScheduledSessionService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Startup.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationId.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/User.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/ExpertApplicationRespose.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/ExpertApplicationResponse.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Communications/BaseResponse.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Training/ITrainingMaterialRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Training/PlayerTrainingMaterialService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Training/TrainingMaterialService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/SaveCoachAplicationResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/SaveExpertApplicationResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/ExpertApplicationController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/PlayerExpertApplicationsController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ExpertApplication.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ExpertApplicationResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Application/IExpertApplicationRepository.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/PersonalDetail.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Extensions/EnumExtensions.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Extensions/StringExtensions.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/PlayerApplicationsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDetails.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/SaveTrainingMaterialResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Application/IExpertApplicationService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Security/ExpertResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Security/SaveExpertResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ReviewResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/ApplicationsController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Application/ExpertApplicationRepository.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/EApplicationStatus.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Training/IPlayerTrainingMaterialService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Training/PlayerTrainingMaterialService.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Application/ExpertApplicationService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Money.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Session/ScheduledSessionService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IScheduledSessionService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/ScheduledSessionResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveScheduledSessionResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheduledSession.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Player.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/Expert.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IScheduledSessionRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndSessionId.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/ScheduledSessionRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/ScheSessionId.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Session/IIndividualSessionRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ResourceToModelProfile.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionCalification.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Services/Session/IIndividualSessionService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Session/IndividualSessionService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SaveSessionCalification.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/SessionCalificationResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/IndividualSessionController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Session/IndividualSessionRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Mapping/ModelToResourceProfile.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tIjda9OgDx4SSs6yvaiajc0wec" />
@@ -142,8 +140,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="false" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.HelpI.API: IIS Express">
     <configuration name="HelpI.API" type="LaunchSettings" factoryName=".NET Launch Settings Profile">

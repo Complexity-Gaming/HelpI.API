@@ -60,6 +60,10 @@ namespace HelpI.API.Application.Services.Application
             try
             {
                 var player = await _playerRepository.FindById(existingApplication.PlayerId);
+                if (player == null)
+                {
+                    return new ExpertResponse($"Player not found with id: {existingApplication.PlayerId}");
+                }
                 var applicationDetails = existingApplication.ApplicationDetails;
                 var reviewStatus = review.GetValueFromDescription<EApplicationStatus>();
                 existingApplication.ApplicationDetails = new ApplicationDetail(applicationDetails.Description,

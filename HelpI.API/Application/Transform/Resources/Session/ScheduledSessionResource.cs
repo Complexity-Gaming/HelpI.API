@@ -1,5 +1,6 @@
 ﻿using System;
 using HelpI.API.Domain.Models;
+using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Session;
 
 namespace HelpI.API.Application.Transform.Resources.Session
@@ -12,5 +13,7 @@ namespace HelpI.API.Application.Transform.Resources.Session
         public string ScheduledSessionId { get; set; }
         public DateTime Date { get; set; }
         public short Duration { get; set; }
+        public ExpertResource Expert { get; set; }
+        public PlayerResource Player { get; set; }
     }
 }

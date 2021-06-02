@@ -7,10 +7,6 @@ namespace HelpI.API.Domain.Models.Session
 {
     public class SessionDate : ValueObject
     {
-        public SessionDate()
-        {
-        }
-
         public SessionDate(DateTime date, short duration)
         {
             this.Date = date;
