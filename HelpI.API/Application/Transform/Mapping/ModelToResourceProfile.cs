@@ -1,19 +1,13 @@
 ﻿using AutoMapper;
 using HelpI.API.Application.Transform.Resources;
 using HelpI.API.Application.Transform.Resources.Session;
-using HelpI.API.Domain.Models;
 using HelpI.API.Domain.Models.Application;
 using HelpI.API.Domain.Models.Security;
 using HelpI.API.Domain.Models.Session;
 using HelpI.API.Domain.Models.Training;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using HelpI.API.Application.Transform.Resources.Application;
 using HelpI.API.Application.Transform.Resources.Training;
 using HelpI.API.Application.Extensions;
-using HelpI.API.Application.Transform.Resources.Training;
 
 namespace HelpI.API.Application.Transform.Mapping
 {
@@ -38,9 +32,32 @@ namespace HelpI.API.Application.Transform.Mapping
                     opt => opt.MapFrom(src => src.ApplicationDetails.VideoApplication))
                 .ForMember(src => src.Status,
                     opt => opt.MapFrom(src => src.ApplicationDetails.Status.ToDescriptionString()));
+
+            CreateMap<IndividualSession, IndividualSessionResource>()
+                .ForMember(src => src.IndividualSessionId,
+                    opt => opt.MapFrom(src => src.IndividualSessionId.IndividualSessionId))
+                .ForMember(src => src.Currency,
+                    opt => opt.MapFrom(src => src.Price.Currency))
+                .ForMember(src => src.Price,
+                    opt => opt.MapFrom(src => src.Price.Amount))
+                .ForMember(src => src.Date,
+                    opt => opt.MapFrom(src => src.SessionDate.Date))
+                .ForMember(src => src.Duration,
+                    opt => opt.MapFrom(src => src.SessionDate.Duration));
+            ;
             
-            CreateMap<IndividualSession, IndividualSessionResource>();
-            CreateMap<ScheduledSession, ScheduledSessionResource>();
+            CreateMap<ScheduledSession, ScheduledSessionResource>()
+                .ForMember(src => src.Currency,
+                    opt => opt.MapFrom(src => src.Price.Currency))
+                .ForMember(src => src.Price,
+                    opt => opt.MapFrom(src => src.Price.Amount))
+                .ForMember(src => src.ScheduledSessionId,
+                    opt => opt.MapFrom(src => src.ScheduledSessionId.ScheduledSessionId))
+                .ForMember(src => src.Date,
+                    opt => opt.MapFrom(src => src.SessionDate.Date))
+                .ForMember(src => src.Duration,
+                    opt => opt.MapFrom(src => src.SessionDate.Duration));
+            ;
 
             CreateMap<TrainingMaterial, TrainingMaterialResource>()
                  .ForMember(src => src.TrainingMaterialId,

@@ -11,7 +11,6 @@ namespace HelpI.API.Domain.Models.Session
         {
             IndividualSessionId = individualSessionId;
         }
-
         public string IndividualSessionId { get; private set; }
     }
 }

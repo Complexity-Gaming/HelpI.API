@@ -13,6 +13,8 @@ namespace HelpI.API.Domain.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {
+        //Todo: Use TPH(Table per hierarchy) with user instead of TPT(table per type) with players and experts
+        //Todo: Configure Mapping for OwnedProperties on OnModelCreating()
         public DbSet<Player> Players { get; set; }
         public DbSet<Expert> Experts { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
@@ -61,7 +63,6 @@ namespace HelpI.API.Domain.Persistence.Contexts
                .HasMany(p => p.TrainingMaterials)
                .WithOne(p => p.CreatedBy)
                 .HasForeignKey(p => p.ExpertId);
-
 
             // Training Material Entity
             builder.Entity<TrainingMaterial>().ToTable("TrainingMaterials");
@@ -129,6 +130,8 @@ namespace HelpI.API.Domain.Persistence.Contexts
             // Constraints
             builder.Entity<IndividualSession>().HasKey(p => p.Id);
             builder.Entity<IndividualSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<IndividualSession>().Ignore(p => p.SessionDate);
+            builder.Entity<IndividualSession>().Ignore(p => p.Price);
             builder.Entity<IndividualSession>().OwnsOne(m => m.SessionCalification, a =>  {
                 a.ToTable("Califications");
                 a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
@@ -142,6 +145,16 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 a.HasKey("Id");
                 a.Property(p => p.IndividualSessionId).HasColumnName("IndSessionId");
             });
+           
+            builder.Entity<IndividualSession>()
+                .HasOne(p => p.Player)
+                .WithMany(p => p.AssistedSessions)
+                .HasForeignKey(p => p.PlayerId);
+            
+            builder.Entity<IndividualSession>()
+                .HasOne(p => p.Expert)
+                .WithMany(p => p.GivenSessions)
+                .HasForeignKey(p => p.ExpertId);
             
             // Scheduled Sesion Entity
             builder.Entity<ScheduledSession>().ToTable("ScheduledSessions");
@@ -150,10 +163,10 @@ namespace HelpI.API.Domain.Persistence.Contexts
             builder.Entity<ScheduledSession>().HasKey(p => p.Id);
             builder.Entity<ScheduledSession>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<ScheduledSession>().OwnsOne(m => m.Price, a => {
-                a.ToTable("Moneys");
+                a.ToTable("Money");
                 a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
                 a.HasKey("Id");
-                a.Property(p => p.Ammount);
+                a.Property(p => p.Amount);
                 a.Property(p => p.Currency);
             });
             builder.Entity<ScheduledSession>().OwnsOne(m => m.ScheduledSessionId, a => {
@@ -169,6 +182,15 @@ namespace HelpI.API.Domain.Persistence.Contexts
                 a.Property(p => p.Date);
                 a.Property(p => p.Duration);
             });
+            builder.Entity<ScheduledSession>()
+                .HasOne(p => p.Player)
+                .WithMany(p => p.Schedule)
+                .HasForeignKey(p => p.PlayerId);
+            
+            builder.Entity<ScheduledSession>()
+                .HasOne(p => p.Expert)
+                .WithMany(p => p.Schedule)
+                .HasForeignKey(p => p.ExpertId);
 
             builder.ApplySnakeCaseNamingConvention();
         }
