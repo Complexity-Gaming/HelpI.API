@@ -10,6 +10,11 @@ namespace HelpI.API.Domain.Persistence.Repositories.Session
     {
         Task<IEnumerable<IndividualSession>> ListAsync();
         Task<IndividualSession> FindById(int id);
-        void Remove(IndividualSession individualSession);
+        Task AddAsync(IndividualSession session);
+        Task<IEnumerable<IndividualSession>> ListByPlayerIdAsync(int playerId);
+        Task<IEnumerable<IndividualSession>> ListByExpertIdAsync(int expertId);
+        Task<IEnumerable<IndividualSession>> FindByPlayerIdAndExpertId(int playerId, int expertId);
+        void Update(IndividualSession session);
+        void Remove(IndividualSession session);
     }
 }
