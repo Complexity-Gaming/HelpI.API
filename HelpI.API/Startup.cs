@@ -59,16 +59,18 @@ namespace HelpI.API
             services.AddScoped<IExpertRepository, ExpertRepository>();
             services.AddScoped<ITrainingMaterialRepository, TrainingMaterialRepository>();
             services.AddScoped<IPlayerTrainingMaterialRepository, PlayerTrainingMaterialRepository>();
-            services.AddScoped<ICoachApplicationRepository, CoachApplicationRepository>();
+            services.AddScoped<IExpertApplicationRepository, ExpertApplicationRepository>();
             services.AddScoped<IIndividualSessionRepository, IndividualSessionRepository>();
+            services.AddScoped<IScheduledSessionRepository, ScheduledSessionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IExpertService, ExpertService>();
             services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
-            services.AddScoped<ICoachApplicationService, CoachApplicationService>();
+            services.AddScoped<IExpertApplicationService, ExpertApplicationService>();
             services.AddScoped<IIndividualSessionService, IndividualSessionService>();
+            services.AddScoped<IScheduledSessionService, ScheduledSessionService>();
 
             // Endpoints Case Conventions Configuration
 

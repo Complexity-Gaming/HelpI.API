@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace HelpI.API.Domain.Models.Session
 {
-    public class SessionDetails : ValueObject
+    public class SessionDate : ValueObject
     {
-        public SessionDetails()
-        {
-        }
-
-        public SessionDetails(DateTime date, short duration)
+        public SessionDate(DateTime date, short duration)
         {
             this.Date = date;
             this.Duration = duration;

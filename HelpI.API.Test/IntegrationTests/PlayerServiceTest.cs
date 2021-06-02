@@ -37,7 +37,7 @@ namespace HelpI.API.Test.IntegrationTests
         //DeleteAsync
 
         [Test]
-        public async Task DeleteAsyncWhenPlayerDoesNotExistsReturnsPlayerResponse(int id)
+        public async Task DeleteAsyncWhenPlayerDoesNotExistsReturnsPlayerResponse()
         {
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
@@ -54,7 +54,7 @@ namespace HelpI.API.Test.IntegrationTests
         }
 
         [Test]
-        public async Task DeleteAsyncWhenPlayerExistsReturnsNull(int id)
+        public async Task DeleteAsyncWhenPlayerExistsReturnsNull()
         {
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
@@ -66,13 +66,13 @@ namespace HelpI.API.Test.IntegrationTests
 
             PlayerResponse result = await service.DeleteAsync(playerId);
 
-            result.Should().BeNull();
+            result.Resource.Should().BeNull();
         }
 
         //UpdateAsync
 
         [Test]
-        public async Task UpdateAsyncWhenPlayerDoesNotExistReturnPlayerResponse(int id, Player player)
+        public async Task UpdateAsyncWhenPlayerDoesNotExistReturnPlayerResponse()
         {
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
