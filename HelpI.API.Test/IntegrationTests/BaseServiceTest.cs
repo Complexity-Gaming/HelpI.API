@@ -1,4 +1,5 @@
 using HelpI.API.Domain.Persistence.Repositories;
+using HelpI.API.Domain.Persistence.Repositories.Application;
 using HelpI.API.Domain.Persistence.Repositories.Security;
 using HelpI.API.Domain.Persistence.Repositories.Training;
 using Moq;
@@ -29,6 +30,11 @@ namespace HelpI.API.Test.IntegrationTests
         protected Mock<IPlayerRepository> GetDefaultIPlayerRepositoryInstance()
         {
             return new Mock<IPlayerRepository>();
+        }
+        
+        protected Mock<IExpertApplicationRepository> GetDefaultIExpertApplicationRepositoryInstance()
+        {
+            return new Mock<IExpertApplicationRepository>();
         }
     }
 }

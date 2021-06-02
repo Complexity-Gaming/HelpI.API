@@ -81,6 +81,10 @@
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Training/TrainingMaterialResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Security/SaveExpertResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Session/IndividualSessionResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Session/Rest/ScheduledSessionController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ReviewResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/ApplicationsController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Infrastructure/Persistence/Repositories/Application/ExpertApplicationRepository.cs" />
