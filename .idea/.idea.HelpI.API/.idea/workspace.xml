@@ -60,15 +60,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C3E4C2E9-CFE1-442E-80B2-6211DD3536D6/193/ConstructorBindingConvention.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Session/SessionDate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ApplicationDetail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Training/Rest/PlayerTrainingMaterialsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Application/ExpertApplication.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Transform/Resources/Application/ExpertApplicationResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Repositories/Application/IExpertApplicationRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Security/PersonalDetail.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Extensions/EnumExtensions.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Extensions/StringExtensions.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Interfaces/Application/Rest/PlayerApplicationsController.cs" />
@@ -115,6 +109,7 @@
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Persistence/Contexts/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Domain/Models/Session/IndividualSession.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/appsettings.json" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tIjda9OgDx4SSs6yvaiajc0wec" />
@@ -194,6 +189,7 @@
       <workItem from="1622513548165" duration="8625000" />
       <workItem from="1622477847491" duration="22492000" />
       <workItem from="1622556860102" duration="2914000" />
+      <workItem from="1622675916513" duration="1802000" />
     </task>
     <servers />
   </component>
