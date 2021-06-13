@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using HelpI.API.Games.Domain.Services;
 using HelpI.API.Games.Domain.Services.Communications;
 using IGDB;
 using IGDB.Models;
+using Microsoft.Win32.SafeHandles;
 
 namespace HelpI.API.Games.Application 
 {
@@ -18,14 +20,30 @@ namespace HelpI.API.Games.Application
         public async Task<GameResponse> GetGameByIdAsync(int gameId)
         {
             IGDBClient client = new IGDBClient(IgdbClientId, IgdbClientSecret);
-            var games = await client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: $"fields *; where id = {gameId};");
-            if (games == null) 
+            var game = await client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: $"fields *, cover.*; where id = {gameId};");
+            if (game == null) 
                 return new GameResponse($"Game not found with gameId: {gameId}");
-            var covers = await client.QueryAsync<Cover>(IGDBClient.Endpoints.Covers, query: $"fields *; where game = {gameId};");
-            var cover = covers.First();
-            var game = games.First();
-            var gameModel = new GameModel(game.Id, game.Name, game.Storyline, game.Summary,cover.Url,cover.Height,cover.Width);
+            
+            var cover = game.First().Cover.Value;
+            cover.Url = IGDB.ImageHelper.GetImageUrl(cover.ImageId, size: ImageSize.HD1080);
+            
+            var gameModel = new GameModel(game.First().Id, game.First().Name, game.First().Storyline, game.First().Summary, cover.Url, cover.Height, cover.Width);
+            
             return new GameResponse(gameModel);
+        }
+
+        public async Task<IEnumerable<GameModel>> GetAllAsync()
+        {
+            IGDBClient client = new IGDBClient(IgdbClientId, IgdbClientSecret);
+            var games = await client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: "fields *, cover.*; where id = (2963,114795,131800,1372);");
+            List<GameModel> gameModels = new List<GameModel>();
+            foreach (var game in games)
+            {
+                var cover = game.Cover.Value;
+                cover.Url = IGDB.ImageHelper.GetImageUrl(cover.ImageId, size: ImageSize.HD1080);
+                gameModels.Add(new GameModel(game.Id, game.Name, game.Storyline, game.Summary, cover.Url, cover.Height, cover.Width));
+            }
+            return gameModels;
         }
     }
 }
