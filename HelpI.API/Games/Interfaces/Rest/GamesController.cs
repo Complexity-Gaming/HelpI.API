@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using HelpI.API.Games.Domain.Models;
 using HelpI.API.Games.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +17,14 @@ namespace HelpI.API.Games.Interfaces.Rest
         {
             _gameService = gameService;
         }
+        
+        [HttpGet]
+        public async Task<IEnumerable<GameModel>> GetAllAsync()
+        {
+            var resources = await _gameService.GetAllAsync();
+            return resources;
+        }
+        
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(BadRequestResult), 404)]
         public async Task<IActionResult> GetGameAsync(int id)
