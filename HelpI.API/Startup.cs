@@ -30,6 +30,8 @@ using HelpI.API.Domain.Services.Application;
 using HelpI.API.Application.Services.Application;
 using HelpI.API.Domain.Services.Session;
 using HelpI.API.Application.Services.Session;
+using HelpI.API.Games.Application;
+using HelpI.API.Games.Domain.Services;
 
 namespace HelpI.API
 {
@@ -66,6 +68,7 @@ namespace HelpI.API
 
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IExpertService, ExpertService>();
+            services.AddScoped<IGameService, GamesApiFacade>();
             services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
             services.AddScoped<IExpertApplicationService, ExpertApplicationService>();
