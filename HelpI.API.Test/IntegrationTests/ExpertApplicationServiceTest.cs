@@ -108,7 +108,7 @@ namespace HelpI.API.Test.IntegrationTests
             var expertApplicationsCount = result.Count;
 
             // Assert
-            expertApplicationsCount.Should().Equals(0);
+            expertApplicationsCount.Should().Be(0);
         }
         
         //SendExpertApplication
