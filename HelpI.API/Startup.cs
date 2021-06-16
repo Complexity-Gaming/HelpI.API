@@ -47,7 +47,9 @@ namespace HelpI.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // Add CORS Support
+            services.AddCors();
+            
             services.AddControllers();
 
             // DbContext Configuration
@@ -104,7 +106,12 @@ namespace HelpI.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            // CORS Configuration
+            app.UseCors(x => x.SetIsOriginAllowed(origin => true)
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
