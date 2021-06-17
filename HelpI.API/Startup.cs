@@ -44,8 +44,7 @@ namespace HelpI.API
         public void ConfigureServices(IServiceCollection services)
         {
             // Add CORS Support
-            services.AddCors();
-            
+            services.AddCors();         
             services.AddControllers();
 
             // DbContext Configuration
