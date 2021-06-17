@@ -26,11 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Applying\Rest\" />
-    <Folder Include="Interfaces\Coaching\Rest\" />
-    <Folder Include="Interfaces\Games\Rest\" />
-    <Folder Include="Interfaces\Payment\Rest\" />
-    <Folder Include="Interfaces\Scheduling\Rest\" />
+    <Folder Include="Application\Application\Transform" />
+    <Folder Include="Security\Infrastructure\Persistence" />
   </ItemGroup>
 
 </Project>
