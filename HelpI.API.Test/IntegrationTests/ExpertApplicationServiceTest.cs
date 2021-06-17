@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
-using HelpI.API.Application.Services.Application;
-using HelpI.API.Application.Services.Security;
-using HelpI.API.Domain.Models.Application;
-using HelpI.API.Domain.Models.Security;
-using HelpI.API.Domain.Services.Communications;
+using HelpI.API.Application.Application.Services;
+using HelpI.API.Application.Domain.Models;
+using HelpI.API.Application.Domain.Services.Communications;
+using HelpI.API.Security.Domain.Models;
+using HelpI.API.Security.Domain.Services.Communication;
 using Moq;
 using NUnit.Framework;
 
@@ -28,11 +28,12 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
 
             mockExpertApplicationRepository.Setup(r => r.ListAsync()).ReturnsAsync(new List<ExpertApplication>());
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
 
             // Act
 
@@ -40,7 +41,7 @@ namespace HelpI.API.Test.IntegrationTests
             var expertApplicationsCount = result.Count;
 
             // Assert
-            expertApplicationsCount.Should().Equals(0);
+            expertApplicationsCount.Should().Be(0);
         }
         
         //GetByIdAsync
@@ -51,11 +52,13 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var expertApplicationId = 1;
             
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId)).Returns(Task.FromResult<ExpertApplication>(null));
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
 
             // Act
             ExpertApplicationResponse result = await service.GetByIdAsync(expertApplicationId);
@@ -73,11 +76,12 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var expertApplicationId = -1;
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId)).Returns(Task.FromResult<ExpertApplication>(null));
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object,mockGameRepository.Object);
 
             // Act
             ExpertApplicationResponse result = await service.GetByIdAsync(expertApplicationId);
@@ -95,13 +99,14 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var applicantId = -1;
 
             mockExpertApplicationRepository.Setup(r => r.ListByApplicantIdAsync(applicantId))
                 .ReturnsAsync(new List<ExpertApplication>());
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
 
             // Act
             List<ExpertApplication> result = (List<ExpertApplication>)await service.ListByApplicantIdAsync(applicantId);
@@ -119,18 +124,20 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var applicantId = -1;
 
             mockPlayerRepository.Setup(r => r.FindById(applicantId)).Returns(Task.FromResult<Player>(null));
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             
             // Act
             ExpertApplicationResponse result = await service.SendExpertApplication(applicantId, new ExpertApplication());
             var message = result.Message;
 
             // Assert
-            message.Should().Be("Applicant Not Found");
+            message.Should().Be("Player Not Found");
 
         }
         
@@ -142,13 +149,15 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             var expertApplicationId = -1;
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
                 .Returns(Task.FromResult<ExpertApplication>(null));
 
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             
             // Act
             ExpertResponse result = await service.ReviewApplicationAsync(expertApplicationId, "", "");
@@ -165,18 +174,20 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationDetail applicationDetail = new ApplicationDetail("", new Uri("http://www.example.com/"), EApplicationStatus.Rejected,"");
-            expertApplication.ApplicationDetails = applicationDetail;
+            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Rejected,"");
+            expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
                 .Returns(Task.FromResult(expertApplication));
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             // Act
             ExpertResponse result = await service.ReviewApplicationAsync(expertApplicationId, "", "");
             var message = result.Message;
@@ -193,18 +204,20 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationDetail applicationDetail = new ApplicationDetail("", new Uri("http://www.example.com/"), EApplicationStatus.Passed,"");
-            expertApplication.ApplicationDetails = applicationDetail;
+            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Passed,"");
+            expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
                 .Returns(Task.FromResult(expertApplication));
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             // Act
             ExpertResponse result = await service.ReviewApplicationAsync(expertApplicationId, "", "");
             var message = result.Message;
@@ -221,18 +234,29 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             
             var expertApplicationId = 1;
+            var playerId = 1;
+            
             ExpertApplication expertApplication = new ExpertApplication();
+            Player player = new Player();
+            
+            player.Id = 1;
             expertApplication.Id = expertApplicationId;
-            ApplicationDetail applicationDetail = new ApplicationDetail("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
-            expertApplication.ApplicationDetails = applicationDetail;
+            expertApplication.PlayerId = playerId;
+            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
+            expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
                 .Returns(Task.FromResult(expertApplication));
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            mockPlayerRepository.Setup(r => r.FindById(expertApplicationId))
+                .Returns(Task.FromResult(player));
+            
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             // Act
             ExpertResponse result = await service.ReviewApplicationAsync(expertApplicationId, "Rejected", "");
             var message = result.Message;
@@ -248,17 +272,19 @@ namespace HelpI.API.Test.IntegrationTests
             var mockExpertApplicationRepository = GetDefaultIExpertApplicationRepositoryInstance();
             var mockExpertRepository = GetDefaultIExpertRepositoryInstance();
             var mockPlayerRepository = GetDefaultIPlayerRepositoryInstance();
+            
+            var mockGameRepository = GetDefaultIGameRepositoryInstance();
             var mockUnitOfWork = GetDefaultIUnitOfWorkInstance();
             
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationDetail applicationDetail = new ApplicationDetail("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
-            expertApplication.ApplicationDetails = applicationDetail;
+            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
+            expertApplication.SetApplicationForm(applicationForm);
             Player player = new Player();
             var playerId = 1;
             player.Id = playerId;
-            expertApplication.Applicant = player;
+            expertApplication.Player = player;
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
                 .Returns(Task.FromResult(expertApplication));
@@ -266,7 +292,7 @@ namespace HelpI.API.Test.IntegrationTests
             mockPlayerRepository.Setup(r => r.FindById(expertApplication.PlayerId))
                 .Returns(Task.FromResult(player));
             
-            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object);
+            var service = new ExpertApplicationService(mockExpertApplicationRepository.Object, mockUnitOfWork.Object, mockPlayerRepository.Object, mockExpertRepository.Object, mockGameRepository.Object);
             // Act
             ExpertResponse result = await service.ReviewApplicationAsync(expertApplicationId, "Passed", "");
 

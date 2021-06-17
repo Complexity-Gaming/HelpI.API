@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HelpI.API.Domain.Models.Training;
-using HelpI.API.Application.Services.Training;
+using HelpI.API.Training.Application.Services;
+using HelpI.API.Training.Domain.Models;
 
 namespace HelpI.API.Test.IntegrationTests
 {

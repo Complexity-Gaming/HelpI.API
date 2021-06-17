@@ -1,37 +1,34 @@
-using HelpI.API.Domain.Persistence.Contexts;
-using HelpI.API.Domain.Persistence.Repositories;
-using HelpI.API.Domain.Services;
+using HelpI.API.Application.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HelpI.API.Application.Services.Training;
-using HelpI.API.Domain.Persistence.Repositories.Security;
-using HelpI.API.Infrastructure.Persistence.Repositories.Security;
-using HelpI.API.Domain.Persistence.Repositories.Training;
-using HelpI.API.Infrastructure.Persistence.Repositories.Training;
-using HelpI.API.Infrastructure.Persistence.Repositories;
-using HelpI.API.Application.Services.Security;
-using HelpI.API.Domain.Persistence.Repositories.Application;
-using HelpI.API.Infrastructure.Persistence.Repositories.Application;
-using HelpI.API.Domain.Persistence.Repositories.Session;
-using HelpI.API.Infrastructure.Persistence.Repositories.Session;
-using HelpI.API.Domain.Services.Application;
-using HelpI.API.Application.Services.Application;
-using HelpI.API.Domain.Services.Session;
-using HelpI.API.Application.Services.Session;
-using HelpI.API.Games.Application;
+using HelpI.API.Application.Domain.Persistence.Repository;
+using HelpI.API.Application.Domain.Services;
+using HelpI.API.Application.Infrastructure.Persistence;
+using HelpI.API.Games.Application.Services;
+using HelpI.API.Games.Domain.Persistence;
+using HelpI.API.Games.Domain.Persistence.Repository;
 using HelpI.API.Games.Domain.Services;
+using HelpI.API.Games.Infrastructure.Persistence.Repository;
+using HelpI.API.Security.Application.Services;
+using HelpI.API.Security.Domain.Persistence.Repositories;
+using HelpI.API.Security.Domain.Services;
+using HelpI.API.Security.Infrastructure.Repositories;
+using HelpI.API.SeedWork;
+using HelpI.API.SeedWork.Contexts;
+using HelpI.API.SeedWork.Repositories;
+using HelpI.API.Session.Application.Services;
+using HelpI.API.Session.Domain.Repositories;
+using HelpI.API.Session.Domain.Services;
+using HelpI.API.Session.Infrastructure.Persistence.Repositories;
+using HelpI.API.Training.Application.Services;
+using HelpI.API.Training.Domain.Persistence.Repositories;
+using HelpI.API.Training.Domain.Services;
+using HelpI.API.Training.Infrastructure.Persistence.Repositories;
 
 namespace HelpI.API
 {
@@ -43,7 +40,6 @@ namespace HelpI.API
         }
 
         public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -61,21 +57,21 @@ namespace HelpI.API
             // Dependency Injection Configuration
             services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<IExpertRepository, ExpertRepository>();
+            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<IGamesApiFacade, GamesApiFacade>();
             services.AddScoped<ITrainingMaterialRepository, TrainingMaterialRepository>();
             services.AddScoped<IPlayerTrainingMaterialRepository, PlayerTrainingMaterialRepository>();
             services.AddScoped<IExpertApplicationRepository, ExpertApplicationRepository>();
             services.AddScoped<IIndividualSessionRepository, IndividualSessionRepository>();
-            services.AddScoped<IScheduledSessionRepository, ScheduledSessionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IExpertService, ExpertService>();
-            services.AddScoped<IGameService, GamesApiFacade>();
+            services.AddScoped<IGameService, GameService>();
             services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
             services.AddScoped<IExpertApplicationService, ExpertApplicationService>();
             services.AddScoped<IIndividualSessionService, IndividualSessionService>();
-            services.AddScoped<IScheduledSessionService, ScheduledSessionService>();
 
             // Endpoints Case Conventions Configuration
 

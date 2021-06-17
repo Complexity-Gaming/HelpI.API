@@ -1,7 +1,8 @@
-using HelpI.API.Domain.Persistence.Repositories;
-using HelpI.API.Domain.Persistence.Repositories.Application;
-using HelpI.API.Domain.Persistence.Repositories.Security;
-using HelpI.API.Domain.Persistence.Repositories.Training;
+using HelpI.API.Application.Domain.Persistence.Repository;
+using HelpI.API.Games.Domain.Persistence.Repository;
+using HelpI.API.Security.Domain.Persistence.Repositories;
+using HelpI.API.SeedWork.Repositories;
+using HelpI.API.Training.Domain.Persistence.Repositories;
 using Moq;
 using NUnit.Framework;
 
@@ -35,6 +36,10 @@ namespace HelpI.API.Test.IntegrationTests
         protected Mock<IExpertApplicationRepository> GetDefaultIExpertApplicationRepositoryInstance()
         {
             return new Mock<IExpertApplicationRepository>();
+        }
+        protected Mock<IGameRepository> GetDefaultIGameRepositoryInstance()
+        {
+            return new Mock<IGameRepository>();
         }
     }
 }

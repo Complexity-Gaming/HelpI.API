@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using HelpI.API.Domain.Services.Communications;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -7,8 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HelpI.API.Application.Services.Security;
-using HelpI.API.Domain.Models.Security;
+using HelpI.API.Security.Application.Services;
+using HelpI.API.Security.Domain.Models;
+using HelpI.API.Security.Domain.Services.Communication;
 
 namespace HelpI.API.Test.IntegrationTests
 {
