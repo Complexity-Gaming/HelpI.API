@@ -1,5 +1,5 @@
-﻿using HelpI.API.Domain.Services.Communications;
-using HelpI.API.Games.Domain.Models;
+﻿using HelpI.API.Games.Domain.Models;
+using HelpI.API.SeedWork.Communications;
 
 namespace HelpI.API.Games.Domain.Services.Communications
 {
