@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using HelpI.API.Security.Domain.Models;
 using HelpI.API.Security.Domain.Persistence.Repositories;
@@ -33,6 +35,19 @@ namespace HelpI.API.Security.Infrastructure.Repositories
         public void Remove(Player player)
         {
             _context.Players.Remove(player);
+        }
+
+        public async Task<int> GetNewIdAsync()
+        {
+            try
+            {
+                var player = await _context.Players.OrderByDescending(p => p.Id).FirstAsync();
+                return player.Id + 1;
+            }
+            catch (Exception e)
+            {
+                return 1;
+            }
         }
 
         public void Update(Player player)

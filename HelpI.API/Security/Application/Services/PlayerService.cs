@@ -24,11 +24,6 @@ namespace HelpI.API.Security.Application.Services
             _playerTrainingMaterialRepository = playerTrainingMaterialRepository;
         }
 
-        public PlayerService()
-        {
-
-        }
-
         public async Task<PlayerResponse> DeleteAsync(int id)
         {
             var existingPlayer = await _playerRepository.FindById(id);
@@ -75,6 +70,7 @@ namespace HelpI.API.Security.Application.Services
         {
             try
             {
+                player.Id = await _playerRepository.GetNewIdAsync();
                 await _playerRepository.AddAsync(player);
                 await _unitOfWork.CompleteAsync();
 

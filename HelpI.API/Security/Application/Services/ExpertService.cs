@@ -56,6 +56,8 @@ namespace HelpI.API.Security.Application.Services
         {
             try
             {
+                
+                expert.Id = await _expertRepository.GetNewIdAsync();
                 await _expertRepository.AddAsync(expert);
                 await _unitOfWork.CompleteAsync();
                 return new ExpertResponse(expert);

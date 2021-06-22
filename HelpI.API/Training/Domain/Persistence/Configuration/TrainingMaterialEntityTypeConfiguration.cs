@@ -14,17 +14,12 @@ namespace HelpI.API.Training.Domain.Persistence.Configuration
             trainingConfiguration.HasKey(p => p.Id);
             trainingConfiguration.Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             trainingConfiguration.OwnsOne(m => m.TrainingDetails, a => {
-                a.ToTable("TrainingDetails");
-                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
-                a.HasKey("Id");
-                a.Property(p => p.VideoUri);
-                a.Property(p => p.PublishedDate);
-                a.Property(p => p.Currency);
+                a.Property(p => p.VideoUri).HasColumnName("VideoUrl");
+                a.Property(p => p.PublishedDate).HasColumnName("PublishedDate");
+                a.Property(p => p.Currency).HasColumnName("Currency");
+                a.Property(p => p.Price).HasColumnName("Price");
             });
             trainingConfiguration.OwnsOne(m => m.TrainingMaterialId, a => {
-                a.ToTable("TrainingIds");
-                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
-                a.HasKey("Id");
                 a.Property(p => p.TrainingMaterialId).HasColumnName("TrainingId") ;
             });
         }

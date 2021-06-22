@@ -29,7 +29,7 @@ namespace HelpI.API.SeedWork.Mapping
 
             CreateMap<IndividualSession, IndividualSessionResource>()
                 .ForMember(src => src.IndividualSessionId,
-                    opt => opt.MapFrom(src => src.IndividualSessionId.IndividualSessionId))
+                    opt => opt.MapFrom(src => src.SessionId.IndividualSessionId))
                 .ForMember(src => src.Currency,
                     opt => opt.MapFrom(src => src.Price.Currency))
                 .ForMember(src => src.Price,

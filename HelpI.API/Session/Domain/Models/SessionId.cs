@@ -1,8 +1,8 @@
 ﻿namespace HelpI.API.Session.Domain.Models
 {
-    public class IndSessionId
+    public class SessionId
     {
-        public IndSessionId(string individualSessionId)
+        public SessionId(string individualSessionId)
         {
             IndividualSessionId = individualSessionId;
         }

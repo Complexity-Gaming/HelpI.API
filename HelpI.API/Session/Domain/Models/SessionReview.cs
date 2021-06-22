@@ -3,25 +3,25 @@ using HelpI.API.SeedWork;
 
 namespace HelpI.API.Session.Domain.Models
 {
-    public class SessionCalification : ValueObject
+    public class SessionReview : ValueObject
     {
-        public SessionCalification()
+        public SessionReview()
         {
         }
 
-        public SessionCalification(string comment, short calification)
+        public SessionReview(string comment, short review)
         {
             this.Comment = comment;
-            this.Calification = calification;
+            this.Review = review;
         }
 
         public string Comment { get; private set; }
-        public short Calification { get; private set; }
+        public short Review { get; private set; }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Comment;
-            yield return Calification;
+            yield return Review;
         }
     }
 }

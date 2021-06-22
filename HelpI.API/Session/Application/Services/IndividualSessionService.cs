@@ -24,7 +24,7 @@ namespace HelpI.API.Session.Application.Services
         {
             return null;
         }
-        public async Task<IndividualSessionResponse> EndSession(int sessionId, SessionCalification calification)
+        public async Task<IndividualSessionResponse> EndSession(int sessionId, SessionReview review)
         {
             var session = _individualSessionRepository.FindById(sessionId).Result;
             if(session == null)
@@ -32,7 +32,7 @@ namespace HelpI.API.Session.Application.Services
             
             try
             {
-                session.SessionCalification = calification;
+                session.SessionReview = review;
                 _individualSessionRepository.Update(session);
                 await _unitOfWork.CompleteAsync();
                 return new IndividualSessionResponse(session);

@@ -13,7 +13,7 @@ namespace HelpI.API.Session.Domain.Services
         Task<IEnumerable<IndividualSession>> ListByPlayerIdAsync(int playerId);
         Task<IEnumerable<IndividualSession>> ListByPlayerIdAndExpertId(int playerId, int expertId);
         Task<IndividualSessionResponse> StartSession(int scheduledSessionId);
-        Task<IndividualSessionResponse> EndSession(int sessionId, SessionCalification calification);
+        Task<IndividualSessionResponse> EndSession(int sessionId, SessionReview review);
         Task<IndividualSessionResponse> DeleteAsync(int id);
     }
 }

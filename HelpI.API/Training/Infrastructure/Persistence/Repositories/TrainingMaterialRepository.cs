@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HelpI.API.SeedWork.Contexts;
@@ -31,6 +32,19 @@ namespace HelpI.API.Training.Infrastructure.Persistence.Repositories
                 .Where(p => p.ExpertId == expertId)
                 .Include(p => p.CreatedBy)
                 .ToListAsync();
+        }
+
+        public async Task<int> GetNewIdAsync()
+        {
+            try
+            {
+                var training = await _context.TrainingMaterials.OrderByDescending(p => p.Id).FirstAsync();
+                return training.Id + 1;
+            }
+            catch (Exception e)
+            {
+                return 1;
+            }
         }
     }
 }

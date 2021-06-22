@@ -38,6 +38,7 @@ namespace HelpI.API.Application.Application.Services
                 var existingPlayer = await _playerRepository.FindById(playerId);
                 if (existingPlayer == null)
                     return new ExpertApplicationResponse("Player Not Found");
+                expertApplication.Id = await _expertApplicationRepository.GetNewIdAsync();
                 existingPlayer.AddApplication(expertApplication);
                 await _expertApplicationRepository.AddAsync(expertApplication);
                 await _unitOfWork.CompleteAsync();
