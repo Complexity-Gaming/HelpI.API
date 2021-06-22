@@ -12,5 +12,6 @@ namespace HelpI.API.Application.Domain.Persistence.Repository
         Task AddAsync(ExpertApplication application);
         void Update(ExpertApplication application);
         void Remove(ExpertApplication expertApplication);
+        Task<int> GetNewIdAsync();
     }
 }

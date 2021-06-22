@@ -11,5 +11,6 @@ namespace HelpI.API.Security.Domain.Persistence.Repositories
         Task<Expert> FindById(int id);
         void Update(Expert expert);
         void Remove(Expert expert);
+        Task<int> GetNewIdAsync();
     }
 }

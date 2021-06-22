@@ -11,5 +11,6 @@ namespace HelpI.API.Security.Domain.Persistence.Repositories
         Task<Player> FindById(int id);
         void Update(Player player);
         void Remove(Player player);
+        Task<int> GetNewIdAsync();
     }
 }

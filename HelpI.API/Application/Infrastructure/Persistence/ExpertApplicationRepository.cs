@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HelpI.API.Application.Domain.Models;
@@ -47,6 +48,20 @@ namespace HelpI.API.Application.Infrastructure.Persistence
         public void Remove(ExpertApplication expertApplication)
         {
             _context.ExpertApplications.Remove(expertApplication);
+        }
+
+        public async Task<int> GetNewIdAsync()
+        {
+            try
+            {
+                var expertApplication = await _context.ExpertApplications.OrderByDescending(p => p.Id).FirstAsync();
+                return expertApplication.Id + 1;
+            }
+            catch (Exception e)
+            {
+                return 1;
+            }
+           
         }
     }
 }

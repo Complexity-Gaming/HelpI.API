@@ -20,7 +20,7 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
             return await _context.IndividualSessions
                 .Include(o => o.Expert)
                 .Include(p => p.Player)
-                .Include(p=> p.SessionCalification)
+                .Include(p=> p.SessionReview)
                 .FirstOrDefaultAsync(i => i.Id == id);
         }
 
@@ -66,7 +66,7 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
             return await _context.IndividualSessions
                 .Include(p => p.Player)
                 .Include(p => p.Expert)
-                .Include(p=> p.SessionCalification)
+                .Include(p=> p.SessionReview)
                 .ToListAsync();
         }
 

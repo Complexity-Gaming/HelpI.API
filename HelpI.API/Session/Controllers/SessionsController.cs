@@ -50,7 +50,7 @@ namespace HelpI.API.Session.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var result = await _individualSessionService.EndSession(id, new SessionCalification(resource.Comment, resource.Calification));
+            var result = await _individualSessionService.EndSession(id, new SessionReview(resource.Comment, resource.Calification));
             if (!result.Success)
                 return BadRequest(result.Message);
             var scheduleResource = _mapper.Map<IndividualSession, IndividualSessionResource>(result.Resource);

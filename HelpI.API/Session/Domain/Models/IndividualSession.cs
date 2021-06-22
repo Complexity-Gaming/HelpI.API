@@ -5,14 +5,14 @@ namespace HelpI.API.Session.Domain.Models
 {
     public class IndividualSession
     {
-        //Todo: Rename Session Calification(typo)
+        //Todo: Rename Session Review(typo)
         public IndividualSession()
         {
             
         }
         public IndividualSession(string sessionId, SessionDate sessionDate, int playerId, int expertId, Money price)
         {
-            IndividualSessionId = new IndSessionId(sessionId);
+            SessionId = new SessionId(sessionId);
             SessionDate = sessionDate;
             PlayerId = playerId;
             ExpertId = expertId;
@@ -20,8 +20,8 @@ namespace HelpI.API.Session.Domain.Models
         }
 
         public int Id { get; set; }
-        public IndSessionId IndividualSessionId { get; set; }
-        public SessionCalification SessionCalification { get; set; }
+        public SessionId SessionId { get; set; }
+        public SessionReview SessionReview { get; set; }
         public SessionDate SessionDate { get; set; }
         public Money Price { get; set; }
         public int PlayerId { get; set; }

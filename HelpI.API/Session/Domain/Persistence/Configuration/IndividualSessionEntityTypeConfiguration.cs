@@ -14,22 +14,23 @@ namespace HelpI.API.Session.Domain.Persistence.Configuration
             // Constraints
             individualSessionConfiguration.HasKey(p => p.Id);
             individualSessionConfiguration.Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            individualSessionConfiguration.Ignore(p => p.SessionDate);
-            individualSessionConfiguration.Ignore(p => p.Price);
-            individualSessionConfiguration.OwnsOne(m => m.SessionCalification, a =>  {
-                a.ToTable("Califications");
-                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
-                a.HasKey("Id");
-                a.Property(p => p.Comment);
-                a.Property(p => p.Calification);
+            
+            individualSessionConfiguration.OwnsOne(m => m.SessionReview, a =>  {
+                a.Property(p => p.Comment).HasColumnName("Comment");
+                a.Property(p => p.Review).HasColumnName("Review");
             });
-            individualSessionConfiguration.OwnsOne(m => m.IndividualSessionId, a => {
-                a.ToTable("IndSessionsIds");
-                a.Property<int>("Id").IsRequired().ValueGeneratedOnAdd();
-                a.HasKey("Id");
-                a.Property(p => p.IndividualSessionId).HasColumnName("IndSessionId");
+            individualSessionConfiguration.OwnsOne(m => m.SessionId, a => {
+                a.Property(p => p.IndividualSessionId).HasColumnName("SessionId");
             });
-           
+            individualSessionConfiguration.OwnsOne(m => m.Price, a => {
+                a.Property(p => p.Amount).HasColumnName("Amount");
+                a.Property(p => p.Currency).HasColumnName("Currency");
+            });
+            
+            individualSessionConfiguration.OwnsOne(m => m.SessionDate, a => {
+                a.Property(p => p.Date).HasColumnName("Date");
+                a.Property(p => p.Duration).HasColumnName("Duration");
+            });
             individualSessionConfiguration
                 .HasOne(p => p.Player)
                 .WithMany(p => p.AssistedSessions)
