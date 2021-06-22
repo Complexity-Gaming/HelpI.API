@@ -8,12 +8,9 @@ namespace HelpI.API.Application.Domain.Persistence.Configuration
     {
         public void Configure(EntityTypeBuilder<ExpertApplication> expertApplicationConfiguration)
         {
-            
             expertApplicationConfiguration.ToTable("ExpertApplications");
             expertApplicationConfiguration.HasKey(p => p.Id);
             expertApplicationConfiguration.Property(p => p.Id).IsRequired();
-            expertApplicationConfiguration.Property(p => p.GameId);
-            
             expertApplicationConfiguration.OwnsOne(m => m.ApplicationForm, a => {
                 a.Property(p => p.Description).HasColumnName("Description");
                 a.Property(p => p.VideoApplication).HasColumnName("VideoApplication");
@@ -23,6 +20,7 @@ namespace HelpI.API.Application.Domain.Persistence.Configuration
             expertApplicationConfiguration.HasOne(p => p.Player).WithMany(p => p.ExpertApplications)
                 .HasForeignKey(p => p.PlayerId);
 
+            expertApplicationConfiguration.Property(p => p.GameId);
         }
     }
 }

@@ -8,11 +8,6 @@ namespace HelpI.API.Security.Domain.Models
 {
     public class Expert : Player
     {
-        public int GameId { get; set; }
-        public GameModel Game { get; set; }
-        public IList<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
-        public IList<IndividualSession> GivenSessions { get; set; } = new List<IndividualSession>();
-        
         public Expert()
         {
         }
@@ -39,8 +34,12 @@ namespace HelpI.API.Security.Domain.Models
             this.TrainingMaterials = new List<TrainingMaterial>();
             this.GivenSessions = new List<IndividualSession>();
         }
-
-        public void UpdateProfile(ExpertProfile profile)
+        public ExpertProfile ExpertProfile { get; set; }
+        public int GameId { get; set; }
+        public GameModel Game { get; set; }
+        public IList<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
+        public IList<IndividualSession> GivenSessions { get; set; } = new List<IndividualSession>();
+        public void UpdateExpertProfile(ExpertProfile profile)
         {
             this.ExpertProfile = profile;
         }

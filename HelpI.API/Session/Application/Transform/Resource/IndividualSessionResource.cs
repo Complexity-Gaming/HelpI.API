@@ -9,7 +9,7 @@ namespace HelpI.API.Session.Application.Transform.Resource
     {
         public int Id { get; set; }
         public string IndividualSessionId { get; set; }
-        public SessionCalification SessionCalification { get; set; }
+        public SessionReview SessionReview { get; set; }
         public DateTime Date { get; set; }
         public short Duration { get; set; }
         public string Currency { get; set; }

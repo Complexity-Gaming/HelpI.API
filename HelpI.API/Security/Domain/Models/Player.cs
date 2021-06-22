@@ -17,8 +17,6 @@ namespace HelpI.API.Security.Domain.Models
         public IList<IndividualSession> AssistedSessions { get; set; } = new List<IndividualSession>();
         public IList<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; } = new List<PlayerTrainingMaterial>();
         public IList<ExpertApplication> ExpertApplications { get; set; } = new List<ExpertApplication>();
-        
-        public ExpertProfile ExpertProfile { get; set; }
 
         public void AddApplication(ExpertApplication application)
         {

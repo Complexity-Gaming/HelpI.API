@@ -181,7 +181,7 @@ namespace HelpI.API.Test.IntegrationTests
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Rejected,"");
+            ApplicationForm applicationForm = new ApplicationForm("", "http://www.example.com/", EApplicationStatus.Rejected,"");
             expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
@@ -211,7 +211,7 @@ namespace HelpI.API.Test.IntegrationTests
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Passed,"");
+            ApplicationForm applicationForm = new ApplicationForm("", "http://www.example.com/", EApplicationStatus.Passed,"");
             expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
@@ -247,7 +247,7 @@ namespace HelpI.API.Test.IntegrationTests
             player.Id = 1;
             expertApplication.Id = expertApplicationId;
             expertApplication.PlayerId = playerId;
-            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
+            ApplicationForm applicationForm = new ApplicationForm("", "http://www.example.com/", EApplicationStatus.Pending,"");
             expertApplication.SetApplicationForm(applicationForm);
 
             mockExpertApplicationRepository.Setup(r => r.FindById(expertApplicationId))
@@ -279,7 +279,7 @@ namespace HelpI.API.Test.IntegrationTests
             var expertApplicationId = 1;
             ExpertApplication expertApplication = new ExpertApplication();
             expertApplication.Id = expertApplicationId;
-            ApplicationForm applicationForm = new ApplicationForm("", new Uri("http://www.example.com/"), EApplicationStatus.Pending,"");
+            ApplicationForm applicationForm = new ApplicationForm("", "http://www.example.com/", EApplicationStatus.Pending,"");
             expertApplication.SetApplicationForm(applicationForm);
             Player player = new Player();
             var playerId = 1;

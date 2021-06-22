@@ -4,11 +4,8 @@ using HelpI.API.Application.Application.Transform.Resources;
 using HelpI.API.Application.Domain.Models;
 using HelpI.API.Security.Application.Transform.Resources;
 using HelpI.API.Security.Domain.Models;
-using HelpI.API.Session.Application.Transform.Resource;
-using HelpI.API.Session.Domain.Models;
 using HelpI.API.Training.Application.Transform.Resources;
 using HelpI.API.Training.Domain.Models;
-using ApplicationId = HelpI.API.Application.Domain.Models.ApplicationId;
 
 
 namespace HelpI.API.SeedWork.Mapping

@@ -4,7 +4,7 @@ namespace HelpI.API.Application.Domain.Models
 {
     public enum EApplicationStatus
     {
-        [Description("Passed")]
+        [Description("Passed")] 
         Passed = 1,
         [Description("Rejected")]
         Rejected = 2,

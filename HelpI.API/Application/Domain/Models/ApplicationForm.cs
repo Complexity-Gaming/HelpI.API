@@ -11,7 +11,7 @@ namespace HelpI.API.Application.Domain.Models
         {
             
         }
-        public ApplicationForm(string description, Uri videoApplication, EApplicationStatus status, string reviewComment)
+        public ApplicationForm(string description, string videoApplication, EApplicationStatus status, string reviewComment)
         {
             Description = description;
             VideoApplication = videoApplication;
@@ -20,9 +20,9 @@ namespace HelpI.API.Application.Domain.Models
         }
 
         public string Description { get; private set; }
-        public Uri VideoApplication { get; private set; }
-        public string ReviewComment { get; private set; }
+        public string VideoApplication { get; private set; }
         public EApplicationStatus Status { get; private set; }
+        public string ReviewComment { get; private set; }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
