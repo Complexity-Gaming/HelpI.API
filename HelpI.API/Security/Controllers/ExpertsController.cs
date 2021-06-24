@@ -5,12 +5,13 @@ using HelpI.API.Security.Application.Transform.Resources;
 using HelpI.API.Security.Domain.Models;
 using HelpI.API.Security.Domain.Services;
 using HelpI.API.SeedWork.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HelpI.API.Security.Controllers
 {
+    [Authorize]
     [Route("/api/[controller]")]
-    [Produces("application/json")]
     [ApiController]
     public class ExpertsController : ControllerBase
     {

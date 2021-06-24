@@ -1,3 +1,4 @@
+using System.Text;
 using HelpI.API.Application.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,9 @@ using HelpI.API.Security.Domain.Services;
 using HelpI.API.Security.Infrastructure.Repositories;
 using HelpI.API.SeedWork;
 using HelpI.API.SeedWork.Contexts;
+using HelpI.API.SeedWork.Exceptions;
 using HelpI.API.SeedWork.Repositories;
+using HelpI.API.SeedWork.Settings;
 using HelpI.API.Session.Application.Services;
 using HelpI.API.Session.Domain.Repositories;
 using HelpI.API.Session.Domain.Services;
@@ -29,6 +32,8 @@ using HelpI.API.Training.Application.Services;
 using HelpI.API.Training.Domain.Persistence.Repositories;
 using HelpI.API.Training.Domain.Services;
 using HelpI.API.Training.Infrastructure.Persistence.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HelpI.API
 {
@@ -47,6 +52,33 @@ namespace HelpI.API
             services.AddCors();
             
             services.AddControllers();
+            
+            // AppSettings Section Reference
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            // JSON Web Token Authentication Configuration
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
+            // Authentication Service Configuration
+            services.AddAuthentication(x =>
+                {
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
 
             // DbContext Configuration
             services.AddDbContext<AppDbContext>(options =>
@@ -98,17 +130,22 @@ namespace HelpI.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HelpI.API v1"));
             }
             
-
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
+            
             // CORS Configuration
             app.UseCors(x => x.SetIsOriginAllowed(origin => true)
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
             
+            // Authentication Support
+            app.UseAuthentication();
+            
             app.UseAuthorization();
+            
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

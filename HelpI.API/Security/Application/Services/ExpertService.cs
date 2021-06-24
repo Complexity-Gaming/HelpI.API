@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HelpI.API.Security.Application.Transform.Resources;
 using HelpI.API.Security.Domain.Models;
 using HelpI.API.Security.Domain.Persistence.Repositories;
 using HelpI.API.Security.Domain.Services;

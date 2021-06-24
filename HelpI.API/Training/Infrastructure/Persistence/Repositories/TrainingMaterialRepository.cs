@@ -43,6 +43,7 @@ namespace HelpI.API.Training.Infrastructure.Persistence.Repositories
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return 1;
             }
         }

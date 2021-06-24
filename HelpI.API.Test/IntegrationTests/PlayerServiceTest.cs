@@ -25,7 +25,7 @@ namespace HelpI.API.Test.IntegrationTests
             var mockTrainingMaterialRepository = GetDefaultIPlayerTrainingMaterialRepositoryInstance();
             var playerId = -1;
             mockPlayerRepository.Setup(r => r.FindById(playerId)).Returns(Task.FromResult<Player>(null));
-            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object);
+            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object, null);
 
             PlayerResponse result = await service.GetByIdAsync(playerId);
             var message = result.Message;
@@ -44,7 +44,7 @@ namespace HelpI.API.Test.IntegrationTests
             var playerId = -1;
 
             mockPlayerRepository.Setup(r => r.FindById(playerId)).Returns(Task.FromResult<Player>(null));
-            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object);
+            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object, null);
 
             PlayerResponse result = await service.GetByIdAsync(playerId);
             var message = result.Message;
@@ -61,7 +61,7 @@ namespace HelpI.API.Test.IntegrationTests
             var playerId = 1;
 
             mockPlayerRepository.Setup(r => r.FindById(playerId)).Returns(Task.FromResult<Player>(null));
-            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object);
+            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object, null);
 
             PlayerResponse result = await service.DeleteAsync(playerId);
 
@@ -79,7 +79,7 @@ namespace HelpI.API.Test.IntegrationTests
             var playerId = -1;
 
             mockPlayerRepository.Setup(r => r.FindById(playerId)).Returns(Task.FromResult<Player>(null));
-            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object);
+            var service = new PlayerService(mockPlayerRepository.Object, mockUnitOfWork.Object, mockTrainingMaterialRepository.Object, null);
 
             PlayerResponse result = await service.GetByIdAsync(playerId);
             var message = result.Message;

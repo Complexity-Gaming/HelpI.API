@@ -59,6 +59,7 @@ namespace HelpI.API.Application.Infrastructure.Persistence
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return 1;
             }
            

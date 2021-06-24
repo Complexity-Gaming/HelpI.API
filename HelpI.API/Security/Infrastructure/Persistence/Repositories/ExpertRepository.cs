@@ -45,6 +45,7 @@ namespace HelpI.API.Security.Infrastructure.Repositories
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return 1;
             }
         }
