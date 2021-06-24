@@ -5,10 +5,12 @@ using HelpI.API.Security.Application.Transform.Resources;
 using HelpI.API.Security.Domain.Models;
 using HelpI.API.Security.Domain.Services;
 using HelpI.API.SeedWork.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HelpI.API.Security.Controllers
 {
+    [Authorize]
     [Route("/api/[controller]")]
     [Produces("application/json")]
     [ApiController]
@@ -45,9 +47,9 @@ namespace HelpI.API.Security.Controllers
             var playerResource = _mapper.Map<Player, PlayerResource>(result.Resource);
             return Ok(playerResource);
         }
-
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SavePlayerResource resource)
+        public async Task<IActionResult> Register([FromBody] SavePlayerResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -89,6 +91,17 @@ namespace HelpI.API.Security.Controllers
 
             var playerResource = _mapper.Map<Player, PlayerResource>(result.Resource);
             return Ok(playerResource);
+        }
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticationRequest request)
+        {
+            var response = await _playerService.Authenticate(request);
+
+            if (response == null)
+                return BadRequest(new { message = "Invalid Username or Password" });
+
+            return Ok(response);
         }
     }
 }

@@ -12,5 +12,7 @@ namespace HelpI.API.Security.Domain.Persistence.Repositories
         void Update(Player player);
         void Remove(Player player);
         Task<int> GetNewIdAsync();
+        Task<Player> FindByEmailAndPasswordAsync(string email, string password);
+        Task<Player> FindByEmailAsync(string email);
     }
 }

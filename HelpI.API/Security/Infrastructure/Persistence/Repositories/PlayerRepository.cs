@@ -46,8 +46,21 @@ namespace HelpI.API.Security.Infrastructure.Repositories
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return 1;
             }
+        }
+
+        public async Task<Player> FindByEmailAndPasswordAsync(string email, string password)
+        {
+            var player = await _context.Players.Where(p => p.Email == email && p.Password == password).FirstOrDefaultAsync();
+            return player;
+        }
+
+        public async Task<Player> FindByEmailAsync(string email)
+        {
+            var player = await _context.Players.Where(p => p.Email == email).FirstOrDefaultAsync();
+            return player;
         }
 
         public void Update(Player player)
