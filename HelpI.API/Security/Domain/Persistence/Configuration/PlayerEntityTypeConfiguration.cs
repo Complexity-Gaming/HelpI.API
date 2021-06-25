@@ -17,7 +17,7 @@ namespace HelpI.API.Security.Domain.Persistence.Configuration
             playerConfiguration.HasKey(p => p.Id);
             playerConfiguration.Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             playerConfiguration.Property(p => p.Email).IsRequired().HasMaxLength(35);
-            playerConfiguration.Property(p => p.Password).IsRequired().HasMaxLength(15);
+            playerConfiguration.Property(p => p.Password).IsRequired();
             
             playerConfiguration.OwnsOne(
                 o => o.PersonalProfile,
