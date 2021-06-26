@@ -50,6 +50,11 @@ namespace HelpI.API.Security.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Expert>> FindByGameIdAsync(int gameId)
+        {
+            return await _context.Experts.Where(p => p.GameId == gameId).ToListAsync();
+        }
+
         public void Update(Expert expert)
         {
             _context.Experts.Update(expert);

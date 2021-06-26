@@ -9,8 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HelpI.API.Security.Controllers
-{
-    [Authorize]
+{ 
     [Route("/api/[controller]")]
     [Produces("application/json")]
     [ApiController]

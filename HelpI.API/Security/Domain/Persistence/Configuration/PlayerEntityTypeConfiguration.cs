@@ -26,6 +26,7 @@ namespace HelpI.API.Security.Domain.Persistence.Configuration
                     sa.Property(p => p.FirstName).HasColumnName("FirstName");
                     sa.Property(p => p.LastName).HasColumnName("LastName");
                     sa.Property(p => p.Birthdate).HasColumnName("Birthdate");
+                    sa.Property(p => p.ProfilePictureUrl).HasColumnName("ProfilePictureUrl");
                 });
             
             // Relationships

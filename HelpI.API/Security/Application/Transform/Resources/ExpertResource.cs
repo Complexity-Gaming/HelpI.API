@@ -1,4 +1,5 @@
-﻿using HelpI.API.Games.Domain.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using HelpI.API.Games.Domain.Models;
 using HelpI.API.Security.Domain.Models;
 
 namespace HelpI.API.Security.Application.Transform.Resources

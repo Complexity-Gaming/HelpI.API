@@ -16,7 +16,7 @@ namespace HelpI.API.Security.Domain.Models
             this.Id = player.Id;
             this.Email = player.Email;
             this.Password = player.Password;
-            this.PersonalProfile = new PersonalProfile(player.PersonalProfile.FirstName, player.PersonalProfile.LastName, player.PersonalProfile.Birthdate);
+            this.PersonalProfile = new PersonalProfile(player.PersonalProfile.FirstName, player.PersonalProfile.LastName, player.PersonalProfile.Birthdate, player.PersonalProfile.ProfilePictureUrl);
             player.PersonalProfile = null;
             foreach (var application in player.ExpertApplications)
             {

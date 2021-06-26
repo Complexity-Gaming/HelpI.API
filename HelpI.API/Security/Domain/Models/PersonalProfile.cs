@@ -11,14 +11,17 @@ namespace HelpI.API.Security.Domain.Models
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public DateTime Birthdate { get; private set; }
+        
+        public String ProfilePictureUrl { get; private set; }
 
         public PersonalProfile() { }
         
-        public PersonalProfile(string firstName, string lastName, DateTime birthdate)
+        public PersonalProfile(string firstName, string lastName, DateTime birthdate, String profilePictureUrl)
         {
             FirstName = firstName;
             LastName = lastName;
             Birthdate = birthdate;
+            ProfilePictureUrl = profilePictureUrl;
         }
         public string FullName()
         {

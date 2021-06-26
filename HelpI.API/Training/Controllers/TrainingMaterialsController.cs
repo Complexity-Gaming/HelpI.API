@@ -30,5 +30,13 @@ namespace HelpI.API.Training.Controllers
             var resources = _mapper.Map<IEnumerable<TrainingMaterial>, IEnumerable<TrainingMaterialResource>>(trainingMaterials);
             return resources;
         }
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(IEnumerable<TrainingMaterialResource>), 200)]
+        public async Task<TrainingMaterialResource> GetTrainingByIdAsync(int id)
+        {
+            var training = await _trainingMaterialService.GetByIdAsync(id);
+            var resource = _mapper.Map<TrainingMaterial, TrainingMaterialResource> (training);
+            return resource;
+        }
     }
 }
