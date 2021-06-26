@@ -26,6 +26,11 @@ namespace HelpI.API.Training.Infrastructure.Persistence.Repositories
             return await _context.TrainingMaterials.Include(p => p.CreatedBy).ToListAsync();
         }
 
+        public async Task<TrainingMaterial> FindByIdAsync(int id)
+        {
+            return await _context.TrainingMaterials.Include(p => p.CreatedBy).Where(p => p.Id == id).FirstAsync();
+        }
+
         public async Task<IEnumerable<TrainingMaterial>> ListByExpertIdAsync(int expertId)
         {
             return await _context.TrainingMaterials
@@ -46,6 +51,12 @@ namespace HelpI.API.Training.Infrastructure.Persistence.Repositories
                 Console.WriteLine(e.Message);
                 return 1;
             }
+        }
+
+        public async Task<IEnumerable<TrainingMaterial>> FindByGameIdAsync(int gameId)
+        {
+            return await _context.TrainingMaterials.Where(p => p.GameId == gameId).Include(p => p.CreatedBy)
+                .ToListAsync();
         }
     }
 }

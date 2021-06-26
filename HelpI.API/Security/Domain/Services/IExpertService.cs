@@ -12,5 +12,7 @@ namespace HelpI.API.Security.Domain.Services
         Task<ExpertResponse> SaveAsync(Expert expert);
         Task<ExpertResponse> UpdateAsync(int id, Expert expert);
         Task<ExpertResponse> DeleteAsync(int id);
+        Task<IEnumerable<Expert>> ListByGameIdAsync(int gameId);
+        Task<ExpertResponse> UpdateProfileAsync(int id, ExpertProfile profile);
     }
 }

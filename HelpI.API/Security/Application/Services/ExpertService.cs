@@ -40,6 +40,28 @@ namespace HelpI.API.Security.Application.Services
             }
         }
 
+        public async Task<IEnumerable<Expert>> ListByGameIdAsync(int gameId)
+        {
+            return await _expertRepository.FindByGameIdAsync(gameId);
+        }
+
+        public async Task<ExpertResponse> UpdateProfileAsync(int id, ExpertProfile profile)
+        {
+            var expert = await _expertRepository.FindById(id);
+            expert.ExpertProfile = profile;
+            try
+            {
+                this._expertRepository.Update(expert);
+                await _unitOfWork.CompleteAsync();
+                return new ExpertResponse(expert);
+            }
+            catch (Exception ex)
+            {
+                return new ExpertResponse($"An error occurred while saving Expert: {ex.Message}");
+            }
+           
+        }
+
         public async Task<ExpertResponse> GetByIdAsync(int id)
         {
             var existingExpert = await _expertRepository.FindById(id);
