@@ -12,6 +12,7 @@ namespace HelpI.API.Security.Controllers
 {
     [Route("/api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ExpertsController : ControllerBase
     {
         private readonly IExpertService _expertService;
@@ -23,6 +24,7 @@ namespace HelpI.API.Security.Controllers
             _mapper = mapper;
         }
         [HttpGet]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(IEnumerable<ExpertResource>), 200)]
         public async Task<IEnumerable<ExpertResource>> GetAllAsync()
         {
