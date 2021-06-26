@@ -15,7 +15,7 @@ namespace HelpI.API.SeedWork.Mapping
         public ResourceToModelProfile()
         {
             CreateMap<SavePlayerResource, Player>().ForMember(src => src.PersonalProfile,
-                opt => opt.MapFrom(src => new PersonalProfile(src.FirstName, src.LastName, src.Birthdate)));
+                opt => opt.MapFrom(src => new PersonalProfile(src.FirstName, src.LastName, src.Birthdate, src.ProfilePictureUrl)));
             CreateMap<SaveExpertResource, Expert>();
 
             CreateMap<SaveExpertApplicationResource, ExpertApplication>()

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HelpI.API.Training.Controllers
 {
     [Route("/api/experts/{expertId}/trainings")]
+    [ApiController]
     public class ExpertTrainingMaterialsController : ControllerBase
     {
         private readonly ITrainingMaterialService _trainingMaterialService;

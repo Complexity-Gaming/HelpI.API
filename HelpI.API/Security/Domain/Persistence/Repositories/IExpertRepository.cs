@@ -12,5 +12,6 @@ namespace HelpI.API.Security.Domain.Persistence.Repositories
         void Update(Expert expert);
         void Remove(Expert expert);
         Task<int> GetNewIdAsync();
+        Task<IEnumerable<Expert>> FindByGameIdAsync(int gameId);
     }
 }

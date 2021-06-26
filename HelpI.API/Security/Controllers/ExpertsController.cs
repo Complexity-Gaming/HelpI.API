@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HelpI.API.Security.Controllers
 {
-    [Authorize]
     [Route("/api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ExpertsController : ControllerBase
     {
         private readonly IExpertService _expertService;
@@ -24,6 +24,7 @@ namespace HelpI.API.Security.Controllers
             _mapper = mapper;
         }
         [HttpGet]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(IEnumerable<ExpertResource>), 200)]
         public async Task<IEnumerable<ExpertResource>> GetAllAsync()
         {
@@ -45,14 +46,13 @@ namespace HelpI.API.Security.Controllers
             return Ok(expertResource);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveExpertResource resource)
+        [HttpPut("{id}/profile")]
+        public async Task<IActionResult> UpdateProfile(int id, [FromBody] SaveExpertProfileResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-
-            var expert = _mapper.Map<SaveExpertResource, Expert>(resource);
-            var result = await _expertService.UpdateAsync(id, expert);
+            ExpertProfile profile = new ExpertProfile(resource.Elo, resource.GameUserName, resource.ExperienceStory, resource.WhyMe, resource.StartedPlaying); 
+            var result = await _expertService.UpdateProfileAsync(id, profile);
 
             if (!result.Success)
                 return BadRequest(result.Message);

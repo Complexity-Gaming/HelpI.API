@@ -26,9 +26,9 @@ namespace HelpI.API.Training.Application.Services
             _playerTrainingMaterialRepository = playerTrainingMaterialRepository;
         }
 
-        public Task<TrainingMaterialResponse> GetByIdAsync(int id)
+        public async Task<TrainingMaterial> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _trainingMaterialRepository.FindByIdAsync(id);
         }
 
         public async Task<IEnumerable<TrainingMaterial>> ListAsync()
@@ -64,6 +64,11 @@ namespace HelpI.API.Training.Application.Services
             {
                 return new TrainingMaterialResponse($"An error occurred while uploading Training Material: {ex.Message}");
             }
+        }
+
+        public async Task<IEnumerable<TrainingMaterial>> ListByGameIdAsync(int gameId)
+        {
+            return await _trainingMaterialRepository.FindByGameIdAsync(gameId);
         }
 
         public Task<TrainingMaterialResponse> UpdateAsync(int id, TrainingMaterial trainingMaterial)

@@ -5,27 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/AuthenticationRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/AuthenticationResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Exceptions/ApplicationException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Exceptions/ExceptionHandlerMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Settings/AppSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SaveExpertProfileResource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelpI.API/Security/Controllers/GameExpertsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelpI.API/Training/Controllers/GameTrainingMaterialsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API.Test/IntegrationTests/PlayerServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API.Test/IntegrationTests/PlayerServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Application/Infrastructure/Persistence/ExpertApplicationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Application/Infrastructure/Persistence/ExpertApplicationRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/HelpI.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/HelpI.API.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Application/Services/ExpertService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Services/ExpertService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Application/Services/PlayerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Services/PlayerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/ExpertResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/ExpertResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SavePlayerResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SavePlayerResource.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Controllers/ExpertsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Controllers/ExpertsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Controllers/PlayersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Controllers/PlayersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/PersonalProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/PersonalProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Configuration/PlayerEntityTypeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Configuration/PlayerEntityTypeConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IPlayerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IPlayerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IPlayerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IPlayerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IExpertRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IExpertRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IExpertService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IExpertService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/ExpertRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/ExpertRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/PlayerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/PlayerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ResourceToModelProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ResourceToModelProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Application/Services/TrainingMaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Application/Services/TrainingMaterialService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/TrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/TrainingMaterialResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Controllers/ExpertTrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Controllers/ExpertTrainingMaterialsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Controllers/TrainingMaterialsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Controllers/TrainingMaterialsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Repositories/ITrainingMaterialRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Repositories/ITrainingMaterialRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Services/ITrainingMaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Services/ITrainingMaterialService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Infrastructure/Persistence/Repositories/TrainingMaterialRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Infrastructure/Persistence/Repositories/TrainingMaterialRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,24 +71,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Models/ExpertApplication.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Services/IExpertApplicationService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Services/Application/ExpertApplicationService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Session/Application/Services/IndividualSessionService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API.Test/IntegrationTests/BaseServiceTest.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/ExpertResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/PlayerTrainingMaterial.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Controllers/ApplicationsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Session/Controllers/SessionsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Training/Controllers/TrainingMaterialsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Application/Transform/Resources/ExpertApplicationResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Persistence/Repository/IExpertApplicationRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Application/Services/ExpertApplicationService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IExpertRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Player.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Repositories/ITrainingMaterialRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingDetail.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Models/EApplicationStatus.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Session/Domain/Models/SessionReview.cs" />
@@ -94,29 +81,47 @@
       <option value="$PROJECT_DIR$/HelpI.API/Application/Application/Transform/Resources/SaveExpertApplicationResource.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Models/ApplicationForm.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Session/Domain/Persistence/Configuration/IndividualSessionEntityTypeConfiguration.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ResourceToModelProfile.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Domain/Persistence/Configuration/ExpertApplicationEntityTypeConfiguration.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/IUserService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Training/Infrastructure/Persistence/Repositories/TrainingMaterialRepository.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Application/Infrastructure/Persistence/ExpertApplicationRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/ExpertRepository.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/AuthenticationRequest.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/appsettings.json" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IUserService.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Services/ExpertService.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Settings/AppSettings.cs" />
       <option value="$PROJECT_DIR$/HelpI.API.Test/IntegrationTests/PlayerServiceTest.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IPlayerService.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/AuthenticationResponse.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Controllers/ExpertsController.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Controllers/PlayersController.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Exceptions/ApplicationException.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IPlayerRepository.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/PlayerRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Configuration/PlayerEntityTypeConfiguration.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Startup.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Exceptions/ExceptionHandlerMiddleware.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Services/PlayerService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Controllers/TrainingMaterialsController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Controllers/ExpertTrainingMaterialsController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Controllers/GameExpertsController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Repositories/IExpertRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Infrastructure/Persistence/Repositories/ExpertRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Services/ITrainingMaterialService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Application/Services/TrainingMaterialService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Repositories/ITrainingMaterialRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Infrastructure/Persistence/Repositories/TrainingMaterialRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/TrainingMaterialResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Training/Controllers/GameTrainingMaterialsController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Persistence/Configuration/PlayerEntityTypeConfiguration.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ResourceToModelProfile.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/PersonalProfile.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SavePlayerResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Controllers/PlayersController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IExpertService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Services/ExpertService.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SaveExpertProfileResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Controllers/ExpertsController.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/ExpertResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tIjda9OgDx4SSs6yvaiajc0wec" />
@@ -238,23 +243,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/HelpI.API/Security/Application/Services/PlayerService.cs</url>
-          <line>122</line>
-          <properties documentPath="C:\Users\diego\source\repos\HelpI.API\HelpI.API\Security\Application\Services\PlayerService.cs" initialLine="122" containingFunctionPresentation="method 'Authenticate'">
-            <startOffsets>
-              <option value="4591" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4689" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#HelpI.API.Domain.Models.Application.ExpertApplication" memberName="ApplicationDetails" />
