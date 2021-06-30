@@ -3,14 +3,13 @@ using HelpI.API.SeedWork;
 
 namespace HelpI.API.Session.Domain.Models
 {
-    public class IndividualSession
+    public class CoachingSession
     {
-        //Todo: Rename Session Review(typo)
-        public IndividualSession()
+        public CoachingSession()
         {
             
         }
-        public IndividualSession(string sessionId, SessionDate sessionDate, int playerId, int expertId, Money price)
+        public CoachingSession(string sessionId, SessionDate sessionDate, int playerId, int expertId, Money price)
         {
             SessionId = new SessionId(sessionId);
             SessionDate = sessionDate;

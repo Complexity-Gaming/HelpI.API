@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HelpI.API.Session.Domain.Persistence.Configuration
 {
-    public class IndividualSessionEntityTypeConfiguration : IEntityTypeConfiguration<IndividualSession>
+    public class IndividualSessionEntityTypeConfiguration : IEntityTypeConfiguration<CoachingSession>
     {
-        public void Configure(EntityTypeBuilder<IndividualSession> individualSessionConfiguration)
+        public void Configure(EntityTypeBuilder<CoachingSession> individualSessionConfiguration)
         {
             // Individual Session Entity
             individualSessionConfiguration.ToTable("IndividualSessions");

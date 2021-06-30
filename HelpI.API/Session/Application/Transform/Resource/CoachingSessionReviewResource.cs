@@ -1,8 +1,8 @@
 ﻿namespace HelpI.API.Session.Application.Transform.Resource
 {
-    public class SessionCalificationResource
+    public class CoachingSessionReviewResource
     {
         public string Comment { get; set; }
-        public short Calification { get; set; }
+        public short Review { get; set; }
     }
 }

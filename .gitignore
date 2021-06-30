@@ -12,7 +12,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+workspace.xml
 # Mono auto generated files
 mono_crash.*
 
@@ -359,15 +359,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# Fody - auto-generated XML schema
-FodyWeavers.xsd
-.idea/.idea.HelpI.API/.idea/workspace.xml
-.idea/.idea.HelpI.API/.idea/workspace.xml
 
-.idea/.idea.HelpI.API/.idea/workspace.xml
-.idea/.idea.HelpI.API/.idea/workspace.xml
-.idea/.idea.HelpI.API/.idea/workspace.xml
-.idea/.idea.HelpI.API/.idea/workspace.xml
-
-.idea/.idea.HelpI.API/.idea/workspace.xml
-.idea/.idea.HelpI.API/.idea/workspace.xml

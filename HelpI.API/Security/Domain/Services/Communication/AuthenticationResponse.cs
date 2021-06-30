@@ -9,12 +9,14 @@ namespace HelpI.API.Security.Domain.Services.Communication
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Token { get; set; }
+        public string ProfilePictureUrl { get; set; }
 
         public AuthenticationResponse(Player user, string token )
         {
             Id = user.Id;
             FirstName = user.PersonalProfile.FirstName;
             LastName = user.PersonalProfile.LastName;
+            ProfilePictureUrl = user.PersonalProfile.ProfilePictureUrl;
             Email = user.Email;
             Token = token;
         }

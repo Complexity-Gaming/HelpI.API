@@ -14,57 +14,57 @@ namespace HelpI.API.Session.Controllers
     [ApiController]
     public class SessionsController : ControllerBase
     {
-        private readonly IIndividualSessionService _individualSessionService;
+        private readonly ICoachingSessionService _coachingSessionService;
         private readonly IMapper _mapper;
 
-        public SessionsController(IIndividualSessionService individualSessionService, IMapper mapper)
+        public SessionsController(ICoachingSessionService coachingSessionService, IMapper mapper)
         {
-            _individualSessionService = individualSessionService;
+            _coachingSessionService = coachingSessionService;
             _mapper = mapper;
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<IndividualSessionResource>), 200)]
-        public async Task<IEnumerable<IndividualSessionResource>> GetAllAsync()
+        [ProducesResponseType(typeof(IEnumerable<CoachingSessionResource>), 200)]
+        public async Task<IEnumerable<CoachingSessionResource>> GetAllAsync()
         {
-            var individualSessions = await _individualSessionService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<IndividualSession>, IEnumerable<IndividualSessionResource>>(individualSessions);
+            var individualSessions = await _coachingSessionService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<CoachingSession>, IEnumerable<CoachingSessionResource>>(individualSessions);
             return resources;
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(IndividualSessionResource), 200)]
+        [ProducesResponseType(typeof(CoachingSessionResource), 200)]
         [ProducesResponseType(typeof(BadRequestResult), 404)]
         public async Task<IActionResult> GetAsync(int id)
         {
-            var result = await _individualSessionService.GetByIdAsync(id);
+            var result = await _coachingSessionService.GetByIdAsync(id);
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var individualSessionResource = _mapper.Map<IndividualSession, IndividualSessionResource>(result.Resource);
+            var individualSessionResource = _mapper.Map<CoachingSession, CoachingSessionResource>(result.Resource);
             return Ok(individualSessionResource);
         }
 
         [HttpPost("{id}")]
-        public async Task<ActionResult> EndSession(int id,[FromBody] SessionCalificationResource resource)
+        public async Task<ActionResult> EndSession(int id,[FromBody] CoachingSessionReviewResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var result = await _individualSessionService.EndSession(id, new SessionReview(resource.Comment, resource.Calification));
+            var result = await _coachingSessionService.EndSession(id, new SessionReview(resource.Comment, resource.Review));
             if (!result.Success)
                 return BadRequest(result.Message);
-            var scheduleResource = _mapper.Map<IndividualSession, IndividualSessionResource>(result.Resource);
+            var scheduleResource = _mapper.Map<CoachingSession, CoachingSessionResource>(result.Resource);
 
             return Ok(scheduleResource);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
-            var result = await _individualSessionService.DeleteAsync(id);
+            var result = await _coachingSessionService.DeleteAsync(id);
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var individualSessionResource = _mapper.Map<IndividualSession, IndividualSessionResource>(result.Resource);
+            var individualSessionResource = _mapper.Map<CoachingSession, CoachingSessionResource>(result.Resource);
             return Ok(individualSessionResource);
         }
     }

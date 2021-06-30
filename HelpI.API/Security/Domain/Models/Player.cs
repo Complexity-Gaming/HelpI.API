@@ -14,7 +14,7 @@ namespace HelpI.API.Security.Domain.Models
         public PersonalProfile PersonalProfile { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public IList<IndividualSession> AssistedSessions { get; set; } = new List<IndividualSession>();
+        public IList<CoachingSession> AssistedSessions { get; set; } = new List<CoachingSession>();
         public IList<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; } = new List<PlayerTrainingMaterial>();
         public IList<ExpertApplication> ExpertApplications { get; set; } = new List<ExpertApplication>();
 

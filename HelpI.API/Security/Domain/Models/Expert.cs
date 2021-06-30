@@ -32,13 +32,13 @@ namespace HelpI.API.Security.Domain.Models
                 this.PlayerTrainingMaterials.Add(new PlayerTrainingMaterial{PlayerId = this.Id, TrainingMaterialId = training.TrainingMaterialId});
             }
             this.TrainingMaterials = new List<TrainingMaterial>();
-            this.GivenSessions = new List<IndividualSession>();
+            this.GivenSessions = new List<CoachingSession>();
         }
         public ExpertProfile ExpertProfile { get; set; }
         public int GameId { get; set; }
         public GameModel Game { get; set; }
         public IList<TrainingMaterial> TrainingMaterials { get; set; } = new List<TrainingMaterial>();
-        public IList<IndividualSession> GivenSessions { get; set; } = new List<IndividualSession>();
+        public IList<CoachingSession> GivenSessions { get; set; } = new List<CoachingSession>();
         public void UpdateExpertProfile(ExpertProfile profile)
         {
             this.ExpertProfile = profile;

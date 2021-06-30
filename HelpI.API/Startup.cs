@@ -25,7 +25,7 @@ using HelpI.API.SeedWork.Exceptions;
 using HelpI.API.SeedWork.Repositories;
 using HelpI.API.SeedWork.Settings;
 using HelpI.API.Session.Application.Services;
-using HelpI.API.Session.Domain.Repositories;
+using HelpI.API.Session.Domain.Persistence.Repositories;
 using HelpI.API.Session.Domain.Services;
 using HelpI.API.Session.Infrastructure.Persistence.Repositories;
 using HelpI.API.Training.Application.Services;
@@ -102,7 +102,7 @@ namespace HelpI.API
             services.AddScoped<ITrainingMaterialService, TrainingMaterialService>();
             services.AddScoped<IPlayerTrainingMaterialService, PlayerTrainingMaterialService>();
             services.AddScoped<IExpertApplicationService, ExpertApplicationService>();
-            services.AddScoped<IIndividualSessionService, IndividualSessionService>();
+            services.AddScoped<ICoachingSessionService, CoachingSessionService>();
 
             // Endpoints Case Conventions Configuration
 
