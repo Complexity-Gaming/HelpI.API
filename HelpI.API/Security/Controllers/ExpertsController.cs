@@ -36,6 +36,7 @@ namespace HelpI.API.Security.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ExpertResource), 200)]
         [ProducesResponseType(typeof(BadRequestResult), 404)]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAsync(int id)
         {
             var result = await _expertService.GetByIdAsync(id);
