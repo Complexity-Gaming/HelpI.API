@@ -10,6 +10,8 @@ namespace HelpI.API.Training.Domain.Models
         public TrainingDetail TrainingDetails { get; set; }
         public int GameId { get; set; }
         public int ExpertId { get; set; }
+        
+        public string Description { get; set; } 
 
         public Expert CreatedBy { get; set; }
         public List<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }

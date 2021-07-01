@@ -27,7 +27,7 @@ namespace HelpI.API.SeedWork.Mapping
                 .ForMember(src => src.Status,
                     opt => opt.MapFrom(src => src.ApplicationForm.Status.ToDescriptionString()));
 
-            CreateMap<IndividualSession, IndividualSessionResource>()
+            CreateMap<CoachingSession, CoachingSessionResource>()
                 .ForMember(src => src.IndividualSessionId,
                     opt => opt.MapFrom(src => src.SessionId.IndividualSessionId))
                 .ForMember(src => src.Currency,

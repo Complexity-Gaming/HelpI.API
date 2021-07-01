@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using HelpI.API.SeedWork.Contexts;
 using HelpI.API.SeedWork.Repositories;
 using HelpI.API.Session.Domain.Models;
-using HelpI.API.Session.Domain.Repositories;
+using HelpI.API.Session.Domain.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
@@ -15,7 +15,7 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
         {
         }
 
-        public async Task<IndividualSession> FindById(int id)
+        public async Task<CoachingSession> FindById(int id)
         {
             return await _context.IndividualSessions
                 .Include(o => o.Expert)
@@ -24,12 +24,12 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
                 .FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task AddAsync(IndividualSession session)
+        public async Task AddAsync(CoachingSession session)
         {
             await _context.IndividualSessions.AddAsync(session);
         }
 
-        public async Task<IEnumerable<IndividualSession>> ListByPlayerIdAsync(int playerId)
+        public async Task<IEnumerable<CoachingSession>> ListByPlayerIdAsync(int playerId)
         {
             return await _context.IndividualSessions
                 .Where(p => p.PlayerId == playerId)
@@ -38,7 +38,7 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<IndividualSession>> ListByExpertIdAsync(int expertId)
+        public async Task<IEnumerable<CoachingSession>> ListByExpertIdAsync(int expertId)
         {
             return await _context.IndividualSessions
                 .Where(p => p.ExpertId == expertId)
@@ -47,7 +47,7 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<IndividualSession>> FindByPlayerIdAndExpertId(int playerId, int expertId)
+        public async Task<IEnumerable<CoachingSession>> FindByPlayerIdAndExpertId(int playerId, int expertId)
         {
             return await _context.IndividualSessions
                 .Where(p => p.ExpertId == expertId && p.PlayerId == playerId)
@@ -56,12 +56,12 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public void Update(IndividualSession session)
+        public void Update(CoachingSession session)
         {
             _context.IndividualSessions.Update(session);
         }
 
-        public async Task<IEnumerable<IndividualSession>> ListAsync()
+        public async Task<IEnumerable<CoachingSession>> ListAsync()
         {
             return await _context.IndividualSessions
                 .Include(p => p.Player)
@@ -70,9 +70,9 @@ namespace HelpI.API.Session.Infrastructure.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public void Remove(IndividualSession individualSession)
+        public void Remove(CoachingSession coachingSession)
         {
-            _context.IndividualSessions.Remove(individualSession);
+            _context.IndividualSessions.Remove(coachingSession);
         }
     }
 }

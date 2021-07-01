@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using HelpI.API.Games.Domain.Models;
 using HelpI.API.Games.Domain.Persistence.Repository;
@@ -16,7 +17,7 @@ namespace HelpI.API.Games.Infrastructure.Persistence.Repository
         
         public async Task<IEnumerable<GameModel>> ListAsync()
         {
-            return await _context.Games.ToListAsync();
+            return await _context.Games.IgnoreAutoIncludes().ToListAsync();
         }
 
         public async Task<GameModel> FindById(int id)

@@ -14,6 +14,7 @@ namespace HelpI.API.Training.Domain.Persistence.Configuration
             trainingConfiguration.HasKey(p => p.Id);
             trainingConfiguration.Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             trainingConfiguration.Property(p => p.GameId).IsRequired();
+            trainingConfiguration.Property(p => p.Description);
             trainingConfiguration.OwnsOne(m => m.TrainingDetails, a => {
                 a.Property(p => p.VideoUri).HasColumnName("VideoUrl");
                 a.Property(p => p.PublishedDate).HasColumnName("PublishedDate");

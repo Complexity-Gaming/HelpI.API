@@ -11,6 +11,7 @@ namespace HelpI.API.Training.Application.Transform.Resources
         public Uri VideoUri { get; set; }
 
         public int GameId { get; set; }
+        public string Description { get; set; }
         public DateTime PublishedDate { get; set; }
         public string Currency { get; set; }
         public decimal Price { get; set; }

@@ -21,7 +21,7 @@ namespace HelpI.API.SeedWork.Contexts
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<PlayerTrainingMaterial> PlayerTrainingMaterials { get; set; }
         public DbSet<ExpertApplication> ExpertApplications { get; set; }
-        public DbSet<IndividualSession> IndividualSessions { get; set; }
+        public DbSet<CoachingSession> IndividualSessions { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
