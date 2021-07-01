@@ -21,7 +21,8 @@ namespace HelpI.API.Games.Application.Services
 
         public async Task<IEnumerable<Game>> ListAsync()
         {
-            var games = await _client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: "fields *, cover.*; where id = (2963,114795,131800,1372);");
+            var games = await _client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: "fields id, name, " +
+                "cover.*, screenshots.*, storyline, summary; where id = (2963,114795,131800,1372);");
             foreach (var game in games)
             {
                 game.Cover.Value.Url = IGDB.ImageHelper.GetImageUrl( game.Cover.Value.ImageId, size: ImageSize.HD1080);
@@ -31,7 +32,8 @@ namespace HelpI.API.Games.Application.Services
 
         public async Task<Game> FindById(long? id)
         {
-            var game = await _client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: $"fields *, cover.*; where id = {id};");
+            var game = await _client.QueryAsync<Game>(IGDBClient.Endpoints.Games, query: $"fields id, name," +
+                $" cover.*, screenshots.*, storyline, summary; where id = {id};");
             game.First().Cover.Value.Url =
                 IGDB.ImageHelper.GetImageUrl(game.First().Cover.Value.ImageId, size: ImageSize.HD1080);
             return game.First();

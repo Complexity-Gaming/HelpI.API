@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="057050dd-8b23-4cee-a20b-88b9e4495ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Models/CoachingSessionState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Persistence/Repositories/ICoachingSessionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Services/ICoachingSessionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelpI.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Expert.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Models/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/AuthenticationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/AuthenticationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/SeedWork/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Contexts/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ModelToResourceProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/SeedWork/Mapping/ModelToResourceProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Services/IndividualSessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Application/Services/CoachingSessionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Services/ScheduledSessionService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/IndividualSessionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/CoachingSessionResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/SaveScheduledSessionResource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/ScheduledSessionResource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/SessionCalificationResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Application/Transform/Resource/CoachingSessionReviewResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Controllers/SessionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Controllers/SessionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Domain/Models/IndividualSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Models/CoachingSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Domain/Persistence/Configuration/IndividualSessionEntityTypeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Persistence/Configuration/CoachingSessionEntityTypeConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Domain/Persistence/Repositories/IIndividualSessionRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Domain/Services/Communications/IndividualSessionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Domain/Services/Communications/CoachingSessionResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Domain/Services/IIndividualSessionService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Session/Infrastructure/Persistence/Repositories/IndividualSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Session/Infrastructure/Persistence/Repositories/CoachingSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Games/Application/Services/GameApiFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Games/Application/Services/GameApiFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Games/Domain/Models/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Games/Domain/Models/GameModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Games/Domain/Persistence/Configurations/GameEntityTypeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Games/Domain/Persistence/Configurations/GameEntityTypeConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelpI.API/Games/Infrastructure/Persistence/Repository/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Games/Infrastructure/Persistence/Repository/GameRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HelpI.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,16 +45,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/16E/ControllerBinderDelegateProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BD35322-4927-4FD5-A878-3112D39DCD09/11/9bac89ed/RelationalKeyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelpI.API/Application/Infrastructure/Persistence/ExpertApplicationRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94328E69-51BE-44C6-8626-3B464818FEFF/a9/07042f5f/IGDBClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/2C4/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/SavePlayerResource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/HelpI.API/Application/Infrastructure/Persistence/ExpertApplicationRepository.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/AuthenticationRequest.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/appsettings.json" />
-      <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IUserService.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/SeedWork/Settings/AppSettings.cs" />
       <option value="$PROJECT_DIR$/HelpI.API.Test/IntegrationTests/PlayerServiceTest.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/IPlayerService.cs" />
@@ -120,9 +96,13 @@
       <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Models/TrainingMaterial.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Training/Domain/Persistence/Configuration/TrainingMaterialEntityTypeConfiguration.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Training/Application/Transform/Resources/SaveTrainingMaterialResource.cs" />
-      <option value="$PROJECT_DIR$/HelpI.API/Startup.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Domain/Services/Communication/AuthenticationResponse.cs" />
       <option value="$PROJECT_DIR$/HelpI.API/Security/Application/Transform/Resources/PlayerResource.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Startup.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Games/Domain/Persistence/Configurations/GameEntityTypeConfiguration.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Games/Application/Services/GameApiFacade.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Games/Infrastructure/Persistence/Repository/GameRepository.cs" />
+      <option value="$PROJECT_DIR$/HelpI.API/Games/Domain/Models/GameModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tIjda9OgDx4SSs6yvaiajc0wec" />
@@ -210,6 +190,7 @@
       <workItem from="1624547011505" duration="5826000" />
       <workItem from="1624907790859" duration="3232000" />
       <workItem from="1625027365824" duration="785000" />
+      <workItem from="1625113579111" duration="3033000" />
     </task>
     <servers />
   </component>
@@ -249,6 +230,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#HelpI.API.Domain.Models.Application.ExpertApplication" memberName="ApplicationDetails" />
+        <PinnedItemInfo parentTag="Type#IGDB.IdentitiesOrValues`1" memberName="Ids" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>

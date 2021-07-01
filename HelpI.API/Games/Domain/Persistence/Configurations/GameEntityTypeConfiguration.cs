@@ -20,6 +20,7 @@ namespace HelpI.API.Games.Domain.Persistence.Configurations
             gameConfiguration.Ignore(p => p.CoverUrl);
             gameConfiguration.Ignore(p => p.CoverHeight);
             gameConfiguration.Ignore(p => p.CoverWidth);
+            gameConfiguration.Ignore(p => p.BackgroundImageUrl);
             CreateData(gameConfiguration);
         }
 
